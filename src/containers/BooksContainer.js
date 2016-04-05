@@ -10,11 +10,11 @@ import React, {
 } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Main from '../components/Main';
+import Books from '../components/BooksComponent';
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
 
-  propTypes = {
+  static propTypes = {
     actions: PropTypes.object.isRequired,
     items: PropTypes.object.isRequired
   };
@@ -43,4 +43,4 @@ function mapStateToProps(state) {
 //   const actionMap = { actions: bindActionCreators(actions, dispatch) };
 //   return actionMap;
 // }
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(Books);

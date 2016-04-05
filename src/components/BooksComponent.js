@@ -3,14 +3,21 @@ require('styles/App.css');
 
 import React from 'react';
 
-let BooksComponent = ({items}) => (
+let BooksComponent = ({items}) => {
+
+    let itemsToRender = items.map((item) => {
+    return(
+        <div>
+          <span>{item.title}</span>
+          <span>{item.price}</span>
+        </div>
+    );
+  });
+
+  return (
       <div className="index">
-        {items.map = (item) => {
-          <div>
-            {item}
-          </div>
-        }}
-      </div>
-);
+        {itemsToRender}
+      </div>)
+};
 
 export default BooksComponent;
