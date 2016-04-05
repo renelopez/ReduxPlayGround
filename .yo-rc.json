@@ -1,0 +1,7 @@
+{
+  "generator-react-webpack": {
+    "appName": "reduxPlayGround",
+    "style": "scss",
+    "postcss": true
+  }
+}
