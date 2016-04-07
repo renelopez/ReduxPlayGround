@@ -7,17 +7,20 @@ let BooksComponent = ({items}) => {
 
     let itemsToRender = items.map((item) => {
     return(
-        <div>
+        <li className="list-group-item">
           <span>{item.title}</span>
           <span>{item.price}</span>
-        </div>
+        </li>
     );
   });
 
   return (
-      <div className="index">
+    <div className="col-md-5">
+      <ul className="list-group">
         {itemsToRender}
-      </div>)
+      </ul>
+    </div>
+  )
 };
 
 export default BooksComponent;

@@ -17,11 +17,12 @@ let config = Object.assign({}, baseConfig, {
   cache: true,
   devtool: 'eval-source-map',
   plugins: [
+    new webpack.ProvidePlugin({
+      $:      "jquery",
+      jQuery: "jquery"
+    }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new BowerWebpackPlugin({
-      searchResolveModulesDirectories: false
-    })
+    new webpack.NoErrorsPlugin()
   ],
   module: defaultSettings.getDefaultModules()
 });
