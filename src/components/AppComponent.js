@@ -9,7 +9,6 @@ import BooksContainer from '../containers/BooksContainer';
 import BookDetailContainer from '../containers/BookDetailContainer';
 
 
-
 let App = () => (
   <div>
     <BooksContainer />
