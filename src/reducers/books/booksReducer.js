@@ -5,7 +5,7 @@
  */
 const initialState = [
   {
-    title:'Harry Potter',
+    title:'Orly Chan',
     price:200
   },
   {
@@ -24,7 +24,8 @@ module.exports = function(state = initialState, action) {
 
   switch(action.type) {
 
-    case 'BOOKS': {
+    case 'BOOKS':
+    {
       // Modify next state depending on the action and return it
       return nextState;
     }

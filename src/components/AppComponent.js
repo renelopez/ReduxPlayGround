@@ -6,9 +6,15 @@
  */
 import React from 'react';
 import BooksContainer from '../containers/BooksContainer';
-/* Populated by react-webpack-redux:reducer */
-let App = () =>(
-  <BooksContainer />
+import BookDetailContainer from '../containers/BookDetailContainer';
+
+
+
+let App = () => (
+  <div>
+    <BooksContainer />
+    <BookDetailContainer />
+  </div>
 );
 
 export default App;

@@ -7,6 +7,9 @@
  *          you edit them, they are not updated again.
  */
 import { combineReducers } from 'redux';
-/* Populated by react-webpack-redux:reducer */
-const reducers = { books: require('../reducers/books/booksReducer.js') };
+import { routerReducer } from 'react-router-redux'
+
+const reducers = { books: require('../reducers/books/booksReducer.js'),
+                   selectedBook:require('../reducers/books/selectedBookReducer.js'),
+                  routing:routerReducer};
 module.exports = combineReducers(reducers);

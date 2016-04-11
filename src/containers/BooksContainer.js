@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 
 import { connect } from 'react-redux';
-import Books from '../components/BooksComponent';
+import { bindActionCreators } from 'redux';
 /* Populated by react-webpack-redux:reducer */
 class BooksContainer extends Component {
 
@@ -20,8 +20,22 @@ class BooksContainer extends Component {
   };
 
   render() {
-    const {items} = this.props;
-    return (<Books items={items}/>);
+    let itemsToRender = this.props.items.map((item) => {
+      return(
+        <li key={item.title} className="list-group-item" onClick={() => {this.props.actions.selectedBook(item)}}>
+          <span>{item.title}</span>
+          <span>{item.price}</span>
+        </li>
+      );
+    });
+
+    return (
+      <div className="col-md-5">
+        <ul className="list-group">
+          {itemsToRender}
+        </ul>
+      </div>
+    )
   }
 }
 /* Populated by react-webpack-redux:reducer
@@ -35,12 +49,12 @@ function mapStateToProps(state) {
   const props = { items: state.books };
   return props;
 }
-// function mapDispatchToProps(dispatch) {
-//   /* Populated by react-webpack-redux:action */
-//   const actions = {
-//     editItem: require('./editItem.js')
-//   };
-//   const actionMap = { actions: bindActionCreators(actions, dispatch) };
-//   return actionMap;
-// }
-export default connect(mapStateToProps)(BooksContainer);
+ function mapDispatchToProps(dispatch) {
+   /* Populated by react-webpack-redux:action */
+   const actions = {
+     selectedBook: require('../actions/books/selectBook')
+   };
+   const actionMap = { actions: bindActionCreators(actions, dispatch) };
+   return actionMap;
+ }
+export default connect(mapStateToProps,mapDispatchToProps)(BooksContainer);
