@@ -5,16 +5,13 @@
  *          you edit them, they are not updated again.
  */
 import React from 'react';
-import BooksContainer from '../containers/BooksContainer';
-import BookDetailContainer from '../containers/BookDetailContainer';
 import Links from '../components/LinksComponent';
 
 
 let App = () => (
   <div>
     <Links />
-    <BooksContainer />
-    <BookDetailContainer />
+    {this.props.children}
   </div>
 );
 

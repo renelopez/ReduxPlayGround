@@ -5,34 +5,49 @@
  */
 const initialState = [
   {
-    name:'Orly Chan',
-    position:200
+      name:'.Net Developer Feedback for FMI',
+      position:'.Net Developer',
+      recruiter:'Jennifer Mugford',
+      reviewer:'Rene Lopez',
+      score:'9.0',
+      description:'It was good, I liked it.',
+      creationDate:new Date()
   },
   {
-    title:'Satan',
-    price:150
+    name:'Java Developer Feedback for Vesta',
+    position:'Java Developer',
+    recruiter:'Karla Montoya',
+    reviewer:'Joe Zepeda',
+    score:'7.0',
+    description:'Great but needs more.',
+    creationDate:new Date()
   },
   {
-    title:'Harry Potter',
-    price:200
+    name:'.Net Developer Feedback',
+    position:'Java Developer',
+    recruiter:'Francisca Molina',
+    reviewer:'Francisco Lopez',
+    score:'10.0',
+    description:'Awesome, I liked it.',
+    creationDate:new Date()
   }
 ];
 
 module.exports = function(state = initialState, action) {
   /* Keep the reducer clean - do not mutate the original state. */
-  let nextState = Object.assign([], state);
 
   switch(action.type) {
 
-    case 'BOOKS':
+    case 'FEEDBACKS':
     {
       // Modify next state depending on the action and return it
+      let nextState = Object.assign([], state);
       return nextState;
     }
 
     default: {
       /* Return original state if no actions were consumed. */
-      return nextState;
+      return state;
     }
   }
-}
+};
