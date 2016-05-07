@@ -5,18 +5,10 @@
  *          you edit them, they are not updated again.
  */
 import React from 'react';
-import Links from './LinksComponent';
 
-class App extends React.Component{
 
-  render(){
-    return(
-        <div>
-          <Links />
-          {this.props.children}
-        </div>
-    )
-  }
-}
+let Home = () => (
+  <h2>This Is Home</h2>
+);
 
-export default App;
+export default Home;

@@ -11,6 +11,6 @@ import { routerReducer } from 'react-router-redux'
 
 const reducers = { books: require('../reducers/books/booksReducer.js'),
                    selectedBook: require('../reducers/books/selectedBookReducer.js'),
-                   feedbacks: require('../reducers/books/feedbacksReducer.js'),
+                   feedbacks: require('../reducers/feedbacks/feedbacksReducer.js'),
                    routing: routerReducer};
 module.exports = combineReducers(reducers);

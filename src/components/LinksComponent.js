@@ -5,7 +5,7 @@ import React from 'React';
 
 const Links= () => (
 
-  <nav class="nav navbar-default">
+  <nav className="nav navbar-default">
     <div className="container fluid">
       <ul className="nav navbar-nav">
         <li><Link to="/">Books</Link></li>
