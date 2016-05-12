@@ -1,14 +1,15 @@
-"use strict";
-
+'use strict';
+//
 import { Link } from 'react-router';
-import React from 'React';
+import React from 'react';
 
 const Links= () => (
 
-  <nav className="nav navbar-default">
-    <div className="container fluid">
-      <ul className="nav navbar-nav">
-        <li><Link to="/">Books</Link></li>
+  <nav className='nav navbar-default'>
+    <div className='container fluid'>
+      <ul className='nav navbar-nav'>
+        <li><Link to='/books'>Books</Link></li>
+        <li><Link to='/feedbacks'>Feedbacks</Link></li>
       </ul>
     </div>
   </nav>

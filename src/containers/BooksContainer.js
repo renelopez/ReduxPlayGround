@@ -4,10 +4,7 @@
  *          This modifications only run once when the generator is invoked - if
  *          you edit them, they are not updated again.
  */
-import React, {
-  Component,
-  PropTypes
-} from 'react';
+import React ,{ Component,PropTypes } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -16,7 +13,7 @@ class BooksContainer extends Component {
 
   static propTypes = {
     actions: PropTypes.object.isRequired,
-    items: PropTypes.object.isRequired
+    items: PropTypes.array.isRequired
   };
 
   render() {
