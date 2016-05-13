@@ -7,8 +7,11 @@
 import React from 'react';
 
 
-let Input = ({props}) => (
-  <h2>This Is Home</h2>
+let Input = ({type,name,cssClass,label,onChange}) => (
+    <div className="form-group">
+      <label htmlFor={name}>{label}</label>
+      <input type={type} name={name} className={cssClass} onChange={(event)=>{onChange(event.target.name,event.target.value)}}/>
+    </div>
 );
 
 export default Input;

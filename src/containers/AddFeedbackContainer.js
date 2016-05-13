@@ -4,6 +4,7 @@ import  React, {Component,PropTypes } from 'react';
 import FeedbackForm from '../components/FeedbackFormComponent.js'
 
 import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 class AddFeedbackContainer extends Component {
 

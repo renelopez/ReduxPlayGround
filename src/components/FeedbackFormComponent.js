@@ -5,13 +5,27 @@ import Input from './InputComponent';
 
 class FeedbackFormComponent extends Component {
 
+  state={
+    feedbackName:'',
+    candidateName:'',
+    interviewerName:'',
+    feedbackComments:''
+  };
+  
+  onChange = (name,value) => {
+      
+  };
+
   render() {
     return(
-        <div>
-          <Input type="text" name="feedbackName" class="form-control" label="Feedback Name" />
-          <Input type="text" name="candidateName" class="form-control" label="Candidate Name" />
-          <Input type="text" name="interviewerName" class="form-control" label="Interviewer Name" />
-          <Input type="textarea" name="feedbackComments" class="form-control" label="Feedback Comments" />
+        <div className="col-md-6">
+          <form>
+            <Input type="text" name="feedbackName" cssClass="form-control" label="Feedback Name" onChange={this.onChange} />
+            <Input type="text" name="candidateName" cssClass="form-control" label="Candidate Name" onChange={this.onChange} />
+            <Input type="text" name="interviewerName" cssClass="form-control" label="Interviewer Name" onChange={this.onChange} />
+            <Input type="text" name="feedbackComments" cssClass="form-control" label="Feedback Comments" onChange={this.onChange} />
+            <button className="btn btn-default">Submit</button>
+          </form>
         </div>
     )
   }

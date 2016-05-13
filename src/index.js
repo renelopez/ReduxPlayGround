@@ -9,6 +9,7 @@ import { render } from 'react-dom';
 import App from './components/AppComponent';
 import BookComponent from './components/BookComponent';
 import HomeComponent from './components/HomeComponent';
+import AddFeedbackContainer from './containers/AddFeedbackContainer';
 
 import { IndexRoute,Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux'
@@ -27,6 +28,7 @@ render((
       <Route path="/" component={App}>
           <IndexRoute component={HomeComponent} />
           <Route path="feedbacks" component={FeedBackListContainer} />
+          <Route path="feedbacks/create" component={AddFeedbackContainer} />
           <Route path="books" component={BookComponent} />
       </Route>
     </Router>

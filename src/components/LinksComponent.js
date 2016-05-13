@@ -10,6 +10,7 @@ const Links= () => (
       <ul className='nav navbar-nav'>
         <li><Link to='/books'>Books</Link></li>
         <li><Link to='/feedbacks'>Feedbacks</Link></li>
+        <li><Link to='/feedbacks/create'>Create Feedback</Link></li>
       </ul>
     </div>
   </nav>
