@@ -26,6 +26,7 @@ class FeedbackListContainer extends Component{
         <td>{item.reviewer}</td>
         <td>{item.score}</td>
         <td>{item.creationDate}</td>
+        <td><Link to={'feedbacks/'+item.id} className="btn btn-default">Go to Details</Link></td>
       </tr>)
     });
 

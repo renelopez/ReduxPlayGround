@@ -1,5 +1,6 @@
-export default initialFeedbackState= [
+module.exports = [
   {
+    id:1,
     name:'Vesta Developer for Telcel',
     position:'.Net Developer',
     recruiter:'Jennifer Mugford',
@@ -12,6 +13,7 @@ export default initialFeedbackState= [
     creationDate:new Date().toLocaleDateString()
   },
   {
+    id:2,
     name:'FMI Developer for Pharma',
     position:'Java Developer',
     recruiter:'Karla Montoya',
@@ -24,6 +26,7 @@ export default initialFeedbackState= [
     creationDate:new Date().toLocaleDateString()
   },
   {
+    id:3,
     name:'Java Bofi for Backend',
     position:'Java Developer',
     recruiter:'Francisca Molina',

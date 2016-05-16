@@ -30,7 +30,7 @@ render((
           <IndexRoute component={HomeComponent} />
           <Route path="feedbacks" component={FeedBackListContainer} />
           <Route path="feedbacks/create" component={AddFeedbackContainer} />
-          <Route path="feedbacks/{id}" component={FeedbackDetailsContainer} />
+          <Route path="feedbacks/:id" component={FeedbackDetailsContainer} />
           <Route path="books" component={BookComponent} />
       </Route>
     </Router>
