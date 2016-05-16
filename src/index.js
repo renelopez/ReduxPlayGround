@@ -10,6 +10,7 @@ import App from './components/AppComponent';
 import BookComponent from './components/BookComponent';
 import HomeComponent from './components/HomeComponent';
 import AddFeedbackContainer from './containers/AddFeedbackContainer';
+import FeedbackDetailsContainer from './containers/FeedbackDetailsContainer';
 
 import { IndexRoute,Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux'
@@ -29,6 +30,7 @@ render((
           <IndexRoute component={HomeComponent} />
           <Route path="feedbacks" component={FeedBackListContainer} />
           <Route path="feedbacks/create" component={AddFeedbackContainer} />
+          <Route path="feedbacks/{id}" component={FeedbackDetailsContainer} />
           <Route path="books" component={BookComponent} />
       </Route>
     </Router>

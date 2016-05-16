@@ -6,11 +6,11 @@ import React from 'react';
 const Links= () => (
 
   <nav className='nav navbar-default'>
-    <div className='container fluid'>
+    <div className='container-fluid'>
       <ul className='nav navbar-nav'>
+        <li><Link to='/'>Feedtrack</Link></li>
         <li><Link to='/books'>Books</Link></li>
-        <li><Link to='/feedbacks'>Feedbacks</Link></li>
-        <li><Link to='/feedbacks/create'>Create Feedback</Link></li>
+        <li><Link to='/feedbacks'>Feedbacks</Link></li> 
       </ul>
     </div>
   </nav>

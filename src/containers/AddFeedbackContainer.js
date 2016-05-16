@@ -8,11 +8,11 @@ import {bindActionCreators} from 'redux';
 
 class AddFeedbackContainer extends Component {
 
-  
+
   onSubmit = (feedbackValues) => {
-    
+    this.props.actions.createFeedback(feedbackValues);
   };
-  
+
  render() {
 
  return(
