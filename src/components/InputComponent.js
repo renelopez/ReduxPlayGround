@@ -7,10 +7,10 @@
 import React from 'react';
 
 
-let Input = ({type,name,cssClass,label,onChange}) => (
+let Input = ({type,name,cssClass,label,onChange,value}) => (
     <div className="form-group">
       <label htmlFor={name}>{label}</label>
-      <input type={type} name={name} className={cssClass} onChange={(event)=>{onChange(event.target.name,event.target.value)}}/>
+      <input type={type} name={name} className={cssClass} value={value} onChange={(event)=>{onChange(event.target.name,event.target.value)}}/>
     </div>
 );
 
