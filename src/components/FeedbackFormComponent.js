@@ -5,13 +5,36 @@ import Input from './InputComponent';
 
 class FeedbackFormComponent extends Component {
 
-  state={
+  state = {
     name:'',
     position:'',
     recruiter:'',
+    candidate:'',
     reviewer:'',
-    score:"",
-    creationDate:null
+    type:'',
+    customer:'',
+    score:'',
+    comments:'',
+    creationDate:null,
+    editionDate:null
+  };
+
+  componentWillReceiveProps=(nextProps) => {
+    if(nextProps.isEdit) {
+      this.setState({
+        'id': nextProps.data.id,
+        'name': nextProps.data.name,
+        'position': nextProps.data.position,
+        'candidate': nextProps.data.candidate,
+        'reviewer': nextProps.data.reviewer,
+        'recruiter': nextProps.data.recruiter,
+        'type': nextProps.data.type,
+        'customer': nextProps.data.customer,
+        'score': nextProps.data.score,
+        'comments': nextProps.data.comments,
+        'creationDate': nextProps.data.creationDate
+      });
+    }
   };
 
   onChange = (name,value) => {
@@ -22,25 +45,33 @@ class FeedbackFormComponent extends Component {
 
   onSubmit=(event) =>{
     event.preventDefault();
-    this.setState({creationDate:new Date().toLocaleDateString()});
+    if(this.props.isEdit) {
+      this.setState({creationDate: new Date().toLocaleDateString()});
+    }
+    else{
+      this.setState({editionDate:new Date().toLocaleDateString()})
+    }
     this.props.onSubmit(this.state);
   };
 
   render() {
     return(
-        <div className="container-fluid col-md-6">
           <form onSubmit={this.onSubmit}>
-            <Input type="text" name="name" cssClass="form-control" label="Name" onChange={this.onChange} />
-            <Input type="text" name="candidate" cssClass="form-control" label="Candidate" onChange={this.onChange} />
-            <Input type="text" name="customer" cssClass="form-control" label="Customer" onChange={this.onChange} />
-            <Input type="text" name="type" cssClass="form-control" label="Type" onChange={this.onChange} />
-            <Input type="text" name="position" cssClass="form-control" label="Position" onChange={this.onChange} />
-            <Input type="text" name="recruiter" cssClass="form-control" label="Recruiter" onChange={this.onChange} />
-            <Input type="text" name="reviewer" cssClass="form-control" label="Reviewer" onChange={this.onChange} />
-            <Input type="text" name="score" cssClass="form-control" label="Score" onChange={this.onChange} />
-            <input type="submit" className="btn btn-default" />
+            <div className="container-fluid">
+              <h3>Details for Feedback {this.state.name}</h3>
+              <Input label='Name' name="name" type="text" cssClass="form-control" value={this.state.name} onChange={this.onChange} />
+              <Input label='Position' name="position" type="text" cssClass="form-control" value={this.state.position} onChange={this.onChange} />
+              <Input label='Candidate' name="candidate" type="text" cssClass="form-control" value={this.state.candidate} onChange={this.onChange} />
+              <Input label='Reviewer' name="reviewer" type="text" cssClass="form-control" value={this.state.reviewer} onChange={this.onChange} />
+              <Input label='Recruiter' name="recruiter" type="text" cssClass="form-control" value={this.state.recruiter} onChange={this.onChange} />
+              <Input label='Type' name="type" type="text" cssClass="form-control" value={this.state.type} onChange={this.onChange} />
+              <Input label='Customer' name="customer" type="text" cssClass="form-control" value={this.state.customer} onChange={this.onChange} />
+              <Input label='Score' name="score" type="text" cssClass="form-control" value={this.state.score} onChange={this.onChange} />
+              <Input label='Comments' name="comments" type="text" cssClass="form-control" value={this.state.comments} onChange={this.onChange} />
+              <Input label='Creation Date' name="creationDate" type="text" cssClass="form-control" value={this.state.creationDate} onChange={this.onChange} />
+              <input type="submit" className="btn btn-default" />
+            </div>
           </form>
-        </div>
     )
   }
 }

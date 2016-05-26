@@ -17,7 +17,7 @@ module.exports = function(state = {}, action) {
       const foundElement=_.find(initialState,(item)=>{
         return item.id === parseInt(action.payload)
       });
-      return foundElement;
+      return Object.assign({},state,foundElement);
     }
 
     default: {

@@ -5,7 +5,9 @@
  */
 
 import {CREATE_FEEDBACK} from '../../actions/const';
+import {EDIT_FEEDBACK} from '../../actions/const';
 import  initialState from './feedbackData';
+import _ from 'lodash';
 
 module.exports = function(state = initialState, action) {
   /* Keep the reducer clean - do not mutate the original state. */
@@ -19,6 +21,13 @@ module.exports = function(state = initialState, action) {
     }
     case CREATE_FEEDBACK:{
       return [...state, action.payload];
+    }
+
+    case EDIT_FEEDBACK:{
+      let indexOfEditElement= _.findIndex(state,(item)=>{return item.id === action.payload.id});
+      return [...state.slice(0,indexOfEditElement),
+              action.payload,
+              ...state.slice(indexOfEditElement + 1 )]
     }
 
     default: {
