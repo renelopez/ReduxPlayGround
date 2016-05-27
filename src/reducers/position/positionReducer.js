@@ -4,7 +4,7 @@
  * src/container/App.js accordingly.
  */
 
-import {CREATE_POSITION} from '../../actions/const';
+import {CREATE_POSITION,EDIT_POSITION} from '../../actions/const';
 import  initialState from './positionData';
 import _ from 'lodash';
 

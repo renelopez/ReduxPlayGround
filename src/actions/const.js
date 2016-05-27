@@ -7,3 +7,4 @@ export const EDIT_FEEDBACK = 'EDIT_FEEDBACK';
 
 
 export const CREATE_POSITION = 'CREATE_POSITION';
+export const EDIT_POSITION = 'EDIT_POSITION';
