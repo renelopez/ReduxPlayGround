@@ -1,5 +1,5 @@
 import {BOOKS} from './../const';
 
-module.exports = function() {
+export default function() {
   return { type: BOOKS };
 };
