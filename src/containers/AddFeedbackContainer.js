@@ -5,6 +5,7 @@ import FeedbackForm from '../components/FeedbackFormComponent.js'
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {createFeedback} from '../actions/feedbackActions'
 
 class AddFeedbackContainer extends Component {
 
@@ -23,11 +24,7 @@ class AddFeedbackContainer extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  const actions = {
-    createFeedback: require('../actions/feedbacks/create')
-  };
-  const actionMap = {actions: bindActionCreators(actions, dispatch)};
-  return actionMap;
+function mapDispatchToProps(dispatch) {  
+  return {actions: bindActionCreators(createFeedback, dispatch)};
 }
 export default connect(null, mapDispatchToProps)(AddFeedbackContainer);

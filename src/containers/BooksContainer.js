@@ -8,6 +8,9 @@ import React ,{ Component,PropTypes } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+import {selectBook} from '../actions/bookActions';
+
 /* Populated by react-webpack-redux:reducer */
 class BooksContainer extends Component {
 
@@ -48,10 +51,6 @@ function mapStateToProps(state) {
 }
  function mapDispatchToProps(dispatch) {
    /* Populated by react-webpack-redux:action */
-   const actions = {
-     selectedBook: require('../actions/books/selectBook')
-   };
-   const actionMap = { actions: bindActionCreators(actions, dispatch) };
-   return actionMap;
+   return { actions: bindActionCreators(selectBook, dispatch) };
  }
 export default connect(mapStateToProps,mapDispatchToProps)(BooksContainer);

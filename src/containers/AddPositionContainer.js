@@ -6,6 +6,8 @@ import PositionForm from '../components/PositionFormComponent.js'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
+import {createPosition} from '../actions/positionActions';
+
 class AddPositionContainer extends Component {
 
 
@@ -24,10 +26,7 @@ class AddPositionContainer extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  const actions = {
-    createPosition: require('../actions/position/create')
-  };
-  const actionMap = {actions: bindActionCreators(actions, dispatch)};
-  return actionMap;
+  return {actions: bindActionCreators(createPosition, dispatch)};
 }
+
 export default connect(null, mapDispatchToProps)(AddPositionContainer);
