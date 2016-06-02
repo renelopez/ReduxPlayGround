@@ -22,7 +22,7 @@ class BooksContainer extends Component {
   render() {
     let itemsToRender = this.props.items.map((item) => {
       return(
-        <li key={item.title} className="list-group-item" onClick={() => {this.props.actions.selectedBook(item)}}>
+        <li key={item.title} className="list-group-item" onClick={() => {this.props.actions.selectBook(item)}}>
           <span>{item.title}</span>
           <span>{item.price}</span>
         </li>
@@ -50,7 +50,9 @@ function mapStateToProps(state) {
   return props;
 }
  function mapDispatchToProps(dispatch) {
-   /* Populated by react-webpack-redux:action */
-   return { actions: bindActionCreators(selectBook, dispatch) };
+   const actions = {
+     selectBook
+   };
+   return { actions: bindActionCreators(actions, dispatch) };
  }
 export default connect(mapStateToProps,mapDispatchToProps)(BooksContainer);

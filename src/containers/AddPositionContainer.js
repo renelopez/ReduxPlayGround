@@ -10,7 +10,10 @@ import {createPosition} from '../actions/positionActions';
 
 class AddPositionContainer extends Component {
 
-
+  static propTypes={
+    actions:PropTypes.object.isRequired
+  };
+  
   onSubmit = (feedbackValues) => {
     this.props.actions.createFeedback(feedbackValues);
   };
@@ -26,7 +29,10 @@ class AddPositionContainer extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {actions: bindActionCreators(createPosition, dispatch)};
+  const actions = {
+    createPosition
+  };
+  return {actions: bindActionCreators(actions, dispatch)};
 }
 
 export default connect(null, mapDispatchToProps)(AddPositionContainer);

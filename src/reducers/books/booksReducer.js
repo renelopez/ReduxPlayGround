@@ -1,39 +1,14 @@
-/* Define your initial state here.
- *
- * If you change the type from object to something else, do not forget to update
- * src/container/App.js accordingly.
- */
-const initialState = [
-  {
-    title:'Orly Chan',
-    price:200
-  },
-  {
-    title:'Satan',
-    price:150
-  },
-  {
-    title:'Harry Potter',
-    price:200
-  }
-];
+import initialState from '../initialState.js'
 
-module.exports = function(state = initialState, action) {
+module.exports = function(state = initialState.books, action) {
   /* Keep the reducer clean - do not mutate the original state. */
   
 
   switch(action.type) {
-
-    case 'BOOKS':
-    {
-      // Modify next state depending on the action and return it
-      let nextState = Object.assign([], state);
-      return nextState;
-    }
 
     default: {
       /* Return original state if no actions were consumed. */
       return state;
     }
   }
-}
+};

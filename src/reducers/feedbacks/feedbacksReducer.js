@@ -4,21 +4,15 @@
  * src/container/App.js accordingly.
  */
 
-import {CREATE_FEEDBACK} from '../../actions/const';
-import {EDIT_FEEDBACK} from '../../actions/const';
-import  initialState from './feedbackData';
+import {CREATE_FEEDBACK,EDIT_FEEDBACK} from '../../actions/actionTypes';
+import initialState from '../initialState.js'
 import _ from 'lodash';
 
-module.exports = function(state = initialState, action) {
+module.exports = function(state = initialState.feedbacks, action) {
   /* Keep the reducer clean - do not mutate the original state. */
 
   switch(action.type) {
-
-    case 'FEEDBACKS':
-    {
-      // Modify next state depending on the action and return it
-      return Object.assign([], state);
-    }
+    
     case CREATE_FEEDBACK:{
       return [...state, action.payload];
     }

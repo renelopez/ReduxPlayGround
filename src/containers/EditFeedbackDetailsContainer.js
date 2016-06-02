@@ -1,6 +1,7 @@
 'use strict';
 import  React, {Component, PropTypes} from 'react';
 import FeedbackForm from '../components/FeedbackFormComponent.js'
+import {editFeedback,setFeedbackDetails} from '../actions/feedbackActions';
 
 
 import {connect} from 'react-redux';
@@ -9,8 +10,13 @@ import {bindActionCreators} from 'redux';
 class EditFeedbackDetailsContainer extends Component {
   constructor(props) {
     super(props);
-    props.actions.details(props.id);
+    props.actions.setFeedbackDetails(props.id);
   }
+
+  static propTypes={
+    actions:PropTypes.object.isRequired,
+    feedbackDetails:PropTypes.object.isRequired
+  };
 
   onSubmit = (feedback) => {
     event.preventDefault();
@@ -26,11 +32,10 @@ class EditFeedbackDetailsContainer extends Component {
 
 function mapDispatchToProps(dispatch) {
   const actions = {
-    details: require('../actions/feedbacks/details'),
-    editFeedback:require('../actions/feedbacks/edit')//
+    setFeedbackDetails,
+    editFeedback
   };
-  const actionMap = {actions: bindActionCreators(actions, dispatch)};
-  return actionMap;
+  return {actions: bindActionCreators(actions, dispatch)};
 }
 
 function mapStateToProps(state, ownProps) {

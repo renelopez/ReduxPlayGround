@@ -18,7 +18,7 @@ class FeedbackListContainer extends Component{
   render(){
     let listToRender=this.props.feedbackList.map((item) => {
       return(
-      <tr>
+      <tr key={item.name}>
         <td>{item.name}</td>
         <td>{item.candidate}</td>
         <td>{item.position}</td>

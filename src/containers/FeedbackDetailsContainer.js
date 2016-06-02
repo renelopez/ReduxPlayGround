@@ -5,11 +5,17 @@ import  React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
+import {getFeedbackDetails} from '../actions/feedbackActions'
+
 class FeedbackDetailsContainer extends Component {
   constructor(props) {
     super(props);
-    props.actions.details(props.id);
+    props.actions.getFeedbackDetails(props.id);
   }
+
+  static propTypes={
+    feedbackDetails:PropTypes.object.isRequired
+  };
 
   render() {
 
@@ -83,7 +89,7 @@ class FeedbackDetailsContainer extends Component {
 
 function mapDispatchToProps(dispatch) {
   const actions = {
-    details: require('../actions/feedbacks/details')
+    getFeedbackDetails
   };
   const actionMap = {actions: bindActionCreators(actions, dispatch)};
   return actionMap;

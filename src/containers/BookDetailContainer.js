@@ -1,5 +1,5 @@
 'use strict';
-import  React, {Component,PropTypes } from 'react';
+import  React, {Component,PropTypes} from 'react';
 
 import { connect } from 'react-redux';
 
@@ -27,4 +27,4 @@ function mapStateToProps(state) {
   const props = { selectedBook: state.selectedBook };
   return props;
 }
-export default connect(mapStateToProps)(BookDetailContainer);
+export default connect(mapStateToProps,null)(BookDetailContainer);

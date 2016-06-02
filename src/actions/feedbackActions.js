@@ -4,7 +4,7 @@ export function createFeedback(feedback) {
   return { type: CREATE_FEEDBACK,payload:feedback };
 }
 
-export function setFeedbackDetails(id) {
+export function getFeedbackDetails(id) {
   return { type: FEEDBACK_DETAILS,payload:id };
 }
 

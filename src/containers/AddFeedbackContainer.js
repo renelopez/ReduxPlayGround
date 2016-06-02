@@ -1,5 +1,5 @@
 'use strict';
-import  React, {Component, PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 import FeedbackForm from '../components/FeedbackFormComponent.js'
 
@@ -9,6 +9,9 @@ import {createFeedback} from '../actions/feedbackActions'
 
 class AddFeedbackContainer extends Component {
 
+  static propTypes={
+    actions:PropTypes.object.isRequired
+  };
 
   onSubmit = (feedbackValues) => {
     this.props.actions.createFeedback(feedbackValues);
@@ -24,7 +27,10 @@ class AddFeedbackContainer extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {  
-  return {actions: bindActionCreators(createFeedback, dispatch)};
+function mapDispatchToProps(dispatch) {
+  const actions = {
+    createFeedback
+  };
+  return {actions: bindActionCreators(actions, dispatch)};
 }
 export default connect(null, mapDispatchToProps)(AddFeedbackContainer);

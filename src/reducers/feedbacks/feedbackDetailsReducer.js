@@ -4,8 +4,8 @@
  * src/container/App.js accordingly.
  */
 
-import {FEEDBACK_DETAILS} from '../../actions/const';
-import  initialState from './feedbackData';
+import {FEEDBACK_DETAILS} from '../../actions/actionTypes';
+import initialState from '../initialState.js'
 import _ from 'lodash';
 
 module.exports = function(state = {}, action) {
@@ -14,7 +14,7 @@ module.exports = function(state = {}, action) {
   switch(action.type) {
     
     case FEEDBACK_DETAILS:{
-      const foundElement=_.find(initialState,(item)=>{
+      const foundElement=_.find(initialState.feedbacks,(item)=>{
         return item.id === parseInt(action.payload)
       });
       return Object.assign({},state,foundElement);

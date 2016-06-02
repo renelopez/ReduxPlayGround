@@ -4,11 +4,11 @@
  * src/container/App.js accordingly.
  */
 
-import {CREATE_POSITION,EDIT_POSITION} from '../../actions/const';
-import  initialState from './positionData';
+import {CREATE_POSITION,EDIT_POSITION} from '../../actions/actionTypes';
+import initialState from '../initialState.js'
 import _ from 'lodash';
 
-module.exports = function(state = initialState, action) {
+module.exports = function(state = initialState.positions, action) {
   /* Keep the reducer clean - do not mutate the original state. */
 
   switch(action.type) {

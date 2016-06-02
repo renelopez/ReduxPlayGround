@@ -10,7 +10,7 @@ const Links= () => (
       <ul className='nav navbar-nav'>
         <li><Link to='/'>Feedtrack</Link></li>
         <li><Link to='/books'>Books</Link></li>
-        <li><Link to='/feedbacks'>Feedbacks</Link></li> 
+        <li><Link to='/feedbacks'>Feedbacks</Link></li>
       </ul>
     </div>
   </nav>
