@@ -9,11 +9,11 @@ import BooksContainer from '../containers/BooksContainer';
 import BookDetailContainer from '../containers/BookDetailContainer';
 
 
-let App = () => (
+let Book = () => (
   <div>
     <BooksContainer />
     <BookDetailContainer />
   </div>
 );
 
-export default App;
+export default Book;
