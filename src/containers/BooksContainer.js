@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import {selectBook} from '../actions/bookActions';
-import {BookListComponent} from '../components/BookListComponent';
+import BookListComponent from '../components/BookListComponent';
 
 /* Populated by react-webpack-redux:reducer */
 class BooksContainer extends Component {
