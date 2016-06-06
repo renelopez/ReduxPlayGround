@@ -21,7 +21,7 @@ class AddFeedbackContainer extends Component {
 
     return (
         <div>
-          <FeedbackForm onSubmit={this.onSubmit}></FeedbackForm>
+          <FeedbackForm onSubmit={this.onSubmit} />
         </div>
     )
   }

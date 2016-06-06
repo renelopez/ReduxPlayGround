@@ -10,9 +10,13 @@ import BookDetailContainer from '../containers/BookDetailContainer';
 
 
 let Book = () => (
-  <div>
-    <BooksContainer />
-    <BookDetailContainer />
+  <div className="row">
+    <div className="col-md-3">
+      <BooksContainer />
+    </div>
+    <div className="col-md-9">
+      <BookDetailContainer />
+    </div>
   </div>
 );
 

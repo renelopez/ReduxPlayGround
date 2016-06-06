@@ -12,17 +12,23 @@ class BooksContainer extends Component {
 
   static propTypes = {
     actions: PropTypes.object.isRequired,
-    items: PropTypes.array.isRequired
+    books: PropTypes.array.isRequired
+  };
+
+  onSelectBook=(book) => {
+    this.props.actions.selectBook(book);
   };
 
   render() {
-    <BookListComponent books={this.props.items}/>
+    return(
+      <BookListComponent books={this.props.books} onSelectBook={this.onSelectBook}/>
+    )
   }
 }
 
 function mapStateToProps(state) {
   /* Populated by react-webpack-redux:reducer */
-  const props = { items: state.books };
+  const props = { books: state.books };
   return props;
 }
  function mapDispatchToProps(dispatch) {

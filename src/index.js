@@ -17,10 +17,14 @@ import { IndexRoute,Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux'
 
 import FeedBackListContainer from './containers/FeedbackListContainer';
+import {loadFeedbacks} from './actions/feedbackActions';
+import {loadBooks} from './actions/bookActions';
 
 import { Provider } from 'react-redux';
 import configureStore from './stores';
 const store = configureStore();
+store.dispatch(loadFeedbacks());
+store.dispatch(loadBooks());
 
 const history = syncHistoryWithStore(browserHistory, store);
 

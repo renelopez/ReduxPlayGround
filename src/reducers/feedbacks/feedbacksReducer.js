@@ -4,15 +4,15 @@
  * src/container/App.js accordingly.
  */
 
-import {CREATE_FEEDBACK,EDIT_FEEDBACK} from '../../actions/actionTypes';
+import {CREATE_FEEDBACK,EDIT_FEEDBACK,LOAD_FEEDBACKS_SUCCESS} from '../../actions/actionTypes';
 import initialState from '../initialState.js'
 import _ from 'lodash';
 
-module.exports = function(state = initialState.feedbacks, action) {
+export default function(state = initialState.feedbacks, action) {
   /* Keep the reducer clean - do not mutate the original state. */
 
   switch(action.type) {
-    
+
     case CREATE_FEEDBACK:{
       return [...state, action.payload];
     }
@@ -24,9 +24,13 @@ module.exports = function(state = initialState.feedbacks, action) {
               ...state.slice(indexOfEditElement + 1 )]
     }
 
+    case LOAD_FEEDBACKS_SUCCESS:
+          return action.payload;
+
+
     default: {
       /* Return original state if no actions were consumed. */
       return state;
     }
   }
-};
+}

@@ -7,8 +7,8 @@ import React, {
 
 
 import { connect } from 'react-redux';
-/* Populated by react-webpack-redux:reducer */
-
+import FeedbackListComponent from '../components/FeedbackListComponent';
+//
 class FeedbackListContainer extends Component{
 
   static propTypes={
@@ -16,7 +16,9 @@ class FeedbackListContainer extends Component{
   };
 //
   render(){
-    <FeedbackListComponent list={this.props.feedbackList} />
+    return(
+      <FeedbackListComponent list={this.props.feedbackList} />
+    )
   }
 }
 

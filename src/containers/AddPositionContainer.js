@@ -22,7 +22,7 @@ class AddPositionContainer extends Component {
 
     return (
         <div>
-          <PositionForm onSubmit={this.onSubmit}></PositionForm>
+          <PositionForm onSubmit={this.onSubmit} />
         </div>
     )
   }

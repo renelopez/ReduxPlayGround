@@ -2,10 +2,11 @@
 import { applyMiddleware,createStore, compose } from 'redux';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import reducers from '../reducers';
+import thunk from 'redux-thunk';
 
 module.exports = function(initialState) {
   const store = createStore(reducers, initialState, compose(
-      applyMiddleware(reduxImmutableStateInvariant()),
+      applyMiddleware(thunk,reduxImmutableStateInvariant()),
       window.devToolsExtension ? window.devToolsExtension() : f => f // add support for Redux dev tools
   ));
 

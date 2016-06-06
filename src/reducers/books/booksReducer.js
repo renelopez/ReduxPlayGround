@@ -1,14 +1,13 @@
 import initialState from '../initialState.js'
+import {LOAD_BOOKS_SUCCESS} from '../../actions/actionTypes';
 
-module.exports = function(state = initialState.books, action) {
-  /* Keep the reducer clean - do not mutate the original state. */
-  
-
-  switch(action.type) {
-
-    default: {
-      /* Return original state if no actions were consumed. */
+export default function (state = initialState.books, action) {
+  switch (action.type) {
+    case LOAD_BOOKS_SUCCESS:
+      return action.payload;
+    default:
+    {
       return state;
     }
   }
-};
+}

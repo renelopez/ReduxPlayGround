@@ -1,7 +1,7 @@
 'use strict';
 import  React, {Component, PropTypes} from 'react';
 import FeedbackForm from '../components/FeedbackFormComponent.js'
-import {editFeedback,setFeedbackDetails} from '../actions/feedbackActions';
+import {editFeedback,getFeedbackById} from '../actions/feedbackActions';
 
 
 import {connect} from 'react-redux';
@@ -10,7 +10,6 @@ import {bindActionCreators} from 'redux';
 class EditFeedbackDetailsContainer extends Component {
   constructor(props) {
     super(props);
-    props.actions.setFeedbackDetails(props.id);
   }
 
   static propTypes={
@@ -18,21 +17,46 @@ class EditFeedbackDetailsContainer extends Component {
     feedbackDetails:PropTypes.object.isRequired
   };
 
-  onSubmit = (feedback) => {
-    event.preventDefault();
-    this.props.actions.editFeedback(feedback);
+  state = {
+    feedback:Object.assign({},this.props.feedbackDetails)
   };
+
+  onChange = (event) => {
+    let currentState=this.state.feedback;
+    currentState[name]=event.target.value;
+    this.setState(currentState);
+  };
+
+  onSubmit=(event) =>{
+    event.preventDefault();
+    if(!this.props.params.id) {
+      this.setState({creationDate: new Date().toLocaleDateString()});
+    }
+    else{
+      this.setState({editionDate:new Date().toLocaleDateString()})
+    }
+    this.props.actions.editFeedback(this.state.feedback);
+  };
+
+
+
+
 
   render() {
     return (
-       <FeedbackForm isEdit="true" onSubmit={this.onSubmit} data={this.props.feedbackDetails} />
+       <FeedbackForm onChange={this.onChange}
+                     onSubmit={this.onSubmit}
+                     data={this.props.feedbackDetails} />
     )
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch,ownProps) {
+  if(ownProps.params.id) {
+    dispatch(getFeedbackById(ownProps.params.id));
+  }
+
   const actions = {
-    setFeedbackDetails,
     editFeedback
   };
   return {actions: bindActionCreators(actions, dispatch)};
@@ -40,7 +64,27 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state, ownProps) {
 
-  const props = {feedbackDetails: state.feedbackDetails, id: ownProps.params.id};
+  let props;
+  let feedback={
+    'id': '',
+    'name': '',
+    'position': '',
+    'candidate': '',
+    'reviewer': '',
+    'recruiter': '',
+    'type': '',
+    'customer': '',
+    'score': '',
+    'comments': '',
+    'creationDate': ''
+  };
+  if(ownProps.params.id){
+    props = {feedbackDetails: state.feedbackDetails};
+  }
+  else{
+    props={feedbackDetails:feedback}
+  }
+
   return props;
 }
 export default connect(mapStateToProps, mapDispatchToProps)(EditFeedbackDetailsContainer);

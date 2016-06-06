@@ -3,6 +3,8 @@ import  React, {Component,PropTypes} from 'react';
 
 import { connect } from 'react-redux';
 
+import BookDetailComponent from '../components/BookDetailComponent';
+
 class BookDetailContainer extends Component {
 
   static propTypes = {
@@ -10,15 +12,9 @@ class BookDetailContainer extends Component {
   };
 
   render() {
-    const {selectedBook} = this.props;
-    if(selectedBook) {
-      return (<div>
-        <h1>{selectedBook.title}</h1>
-      </div>);
-    }
-    else{
-      return (<h1>Select Something!!</h1>)
-    }
+   return(
+     <BookDetailComponent book={this.props.selectedBook} />
+   )
   }
 }
 

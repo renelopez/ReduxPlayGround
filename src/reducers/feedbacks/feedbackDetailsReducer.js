@@ -4,20 +4,16 @@
  * src/container/App.js accordingly.
  */
 
-import {FEEDBACK_DETAILS} from '../../actions/actionTypes';
+import {GET_FEEDBACK_BY_ID_SUCCESS} from '../../actions/actionTypes';
 import initialState from '../initialState.js'
-import _ from 'lodash';
 
-module.exports = function(state = {}, action) {
+export default function(state = initialState.feedbackDetails, action) {
   /* Keep the reducer clean - do not mutate the original state. */
-
   switch(action.type) {
-    
-    case FEEDBACK_DETAILS:{
-      const foundElement=_.find(initialState.feedbacks,(item)=>{
-        return item.id === parseInt(action.payload)
-      });
-      return Object.assign({},state,foundElement);
+
+    case GET_FEEDBACK_BY_ID_SUCCESS:{
+      debugger;
+      return action.payload;
     }
 
     default: {
@@ -25,4 +21,4 @@ module.exports = function(state = {}, action) {
       return state;
     }
   }
-};
+}

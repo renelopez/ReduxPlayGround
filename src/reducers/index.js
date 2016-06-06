@@ -9,9 +9,15 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux'
 
-const reducers = { books: require('../reducers/books/booksReducer.js'),
-                   selectedBook: require('../reducers/books/selectedBookReducer.js'),
-                   feedbacks: require('../reducers/feedbacks/feedbacksReducer.js'),
-                   feedbackDetails: require('../reducers/feedbacks/feedbackDetailsReducer.js'),
+import booksReducer from '../reducers/books/booksReducer.js';
+import selectedBook from '../reducers/books/selectedBookReducer.js';
+import feedbacks from '../reducers/feedbacks/feedbacksReducer.js';
+import feedbackDetails from '../reducers/feedbacks/feedbackDetailsReducer.js';
+
+
+const reducers = { books: booksReducer,
+                   selectedBook: selectedBook,
+                   feedbacks: feedbacks,
+                   feedbackDetails: feedbackDetails,
                    routing: routerReducer};
 module.exports = combineReducers(reducers);
