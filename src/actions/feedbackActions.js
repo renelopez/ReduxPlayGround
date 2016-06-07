@@ -1,26 +1,40 @@
 "use strict";
 
-import {CREATE_FEEDBACK,FEEDBACK_DETAILS,EDIT_FEEDBACK,LOAD_FEEDBACKS_SUCCESS,GET_FEEDBACK_BY_ID_SUCCESS} from './actionTypes';
+import * as types from './actionTypes';
 import feedbackApi from '../api/mockFeedback';
 
 export function createFeedback(feedback) {
-  return { type: CREATE_FEEDBACK,payload:feedback };
+  return { type: types.CREATE_FEEDBACK,payload:feedback };
 }
 
 export function getFeedbackDetails(id) {
-  return { type: FEEDBACK_DETAILS,payload:id };
+  return { type: types.FEEDBACK_DETAILS,payload:id };
 }
 
 export function editFeedback(feedback) {
-  return { type: EDIT_FEEDBACK,payload:feedback };
+  return { type: types.EDIT_FEEDBACK,payload:feedback };
 }
 
 export function loadFeedbacksSuccess(feedbacks) {
-  return { type: LOAD_FEEDBACKS_SUCCESS,payload:feedbacks };
+  return { type: types.LOAD_FEEDBACKS_SUCCESS,payload:feedbacks };
 }
 
 export function getFeedbackByIdSuccess(feedback) {
-  return { type: GET_FEEDBACK_BY_ID_SUCCESS,payload:feedback };
+  return { type: types.GET_FEEDBACK_BY_ID_SUCCESS,payload:feedback };
+}
+
+export function editFeedbackSuccess(feedback) {
+  return { type: types.EDIT_FEEDBACK_SUCCESS,payload:feedback };
+}
+
+export function editFeedback(feedback){
+  return function(dispatch){
+    return feedbackApi.editFeedback(feedback).then((feedback)=>{
+      dispatch(editFeedbackSuccess(feedback));
+    }).catch((error)=>{
+      throw error;
+    });
+  }
 }
 
 export function loadFeedbacks(){

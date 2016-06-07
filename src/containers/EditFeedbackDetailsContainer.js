@@ -10,6 +10,9 @@ import {bindActionCreators} from 'redux';
 class EditFeedbackDetailsContainer extends Component {
   constructor(props) {
     super(props);
+    if(props.params.id) {
+      props.actions.getFeedbackById(props.params.id);
+    }
   }
 
   static propTypes={
@@ -51,12 +54,9 @@ class EditFeedbackDetailsContainer extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch,ownProps) {
-  if(ownProps.params.id) {
-    dispatch(getFeedbackById(ownProps.params.id));
-  }
-
+function mapDispatchToProps(dispatch) {
   const actions = {
+    getFeedbackById,
     editFeedback
   };
   return {actions: bindActionCreators(actions, dispatch)};
