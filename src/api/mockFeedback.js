@@ -59,7 +59,7 @@ class FeedbackApi{
   static getFeedbackById (id){
     return new Promise((resolve,reject)=>{
       setTimeout(()=>{
-        let feedback=feedbacks.filter((feedback)=>{return feedback.id === id});
+        let feedback=feedbacks.filter((feedback)=>{return feedback.id === parseInt(id)});
         if(feedback) {
           resolve(Object.assign({},feedback));
         }
