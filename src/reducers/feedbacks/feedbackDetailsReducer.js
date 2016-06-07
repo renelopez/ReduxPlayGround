@@ -12,7 +12,6 @@ export default function(state = initialState.feedbackDetails, action) {
   switch(action.type) {
 
     case GET_FEEDBACK_BY_ID_SUCCESS:{
-      debugger;
       return action.payload;
     }
 
