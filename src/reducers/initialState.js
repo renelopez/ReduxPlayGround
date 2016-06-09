@@ -14,5 +14,6 @@ export default {
     'score': '',
     'comments': '',
     'creationDate': ''
-  }
+  },
+  ajaxCallsInProgress:0
 }
