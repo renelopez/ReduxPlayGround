@@ -11,7 +11,9 @@ class EditFeedbackDetailsContainer extends Component {
   constructor(props) {
     super(props);
     if(props.params.id) {
-      props.actions.getFeedbackById(props.params.id);
+      props.actions.getFeedbackById(props.params.id).then(()=>{
+        this.setState({'feedback':Object.assign({},this.props.feedbackDetails)});
+      });
     }
   }
 
@@ -24,9 +26,9 @@ class EditFeedbackDetailsContainer extends Component {
     feedback:Object.assign({},this.props.feedbackDetails)
   };
 
-  onChange = (event) => {
+  onChange = (name,value) => {
     let currentState=this.state.feedback;
-    currentState[name]=event.target.value;
+    currentState[name]=value;
     this.setState(currentState);
   };
 
@@ -38,7 +40,9 @@ class EditFeedbackDetailsContainer extends Component {
     else{
       this.setState({editionDate:new Date().toLocaleDateString()})
     }
-    this.props.actions.editFeedback(this.state.feedback);
+    this.props.actions.editFeedback(this.state.feedback).then(()=>{
+      this.context.router.push('/feedbacks');
+    });
   };
 
 
@@ -49,10 +53,14 @@ class EditFeedbackDetailsContainer extends Component {
     return (
        <FeedbackForm onChange={this.onChange}
                      onSubmit={this.onSubmit}
-                     data={this.props.feedbackDetails} />
+                     data={this.state.feedback} />
     )
   }
 }
+
+EditFeedbackDetailsContainer.contextTypes={
+  router:PropTypes.object
+};
 
 function mapDispatchToProps(dispatch) {
   const actions = {

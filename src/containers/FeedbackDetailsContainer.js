@@ -5,14 +5,14 @@ import  React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getFeedbackDetails} from '../actions/feedbackActions';
+import {getFeedbackById} from '../actions/feedbackActions';
 
 import FeedbackDetailsComponent from '../components/FeedbackDetailsComponent';
 
 class FeedbackDetailsContainer extends Component {
   constructor(props) {
     super(props);
-    props.actions.getFeedbackDetails(props.id);
+    props.actions.getFeedbackById(props.params.id);
   }
 
   static propTypes={
@@ -29,7 +29,7 @@ class FeedbackDetailsContainer extends Component {
 
 function mapDispatchToProps(dispatch) {
   const actions = {
-    getFeedbackDetails
+    getFeedbackById
   };
   const actionMap = {actions: bindActionCreators(actions, dispatch)};
   return actionMap;

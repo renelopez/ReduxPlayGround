@@ -7,14 +7,6 @@ export function createFeedback(feedback) {
   return { type: types.CREATE_FEEDBACK,payload:feedback };
 }
 
-export function getFeedbackDetails(id) {
-  return { type: types.FEEDBACK_DETAILS,payload:id };
-}
-
-export function editFeedback(feedback) {
-  return { type: types.EDIT_FEEDBACK,payload:feedback };
-}
-
 export function loadFeedbacksSuccess(feedbacks) {
   return { type: types.LOAD_FEEDBACKS_SUCCESS,payload:feedbacks };
 }
@@ -23,14 +15,14 @@ export function getFeedbackByIdSuccess(feedback) {
   return { type: types.GET_FEEDBACK_BY_ID_SUCCESS,payload:feedback };
 }
 
-export function editFeedbackSuccess(feedback) {
-  return { type: types.EDIT_FEEDBACK_SUCCESS,payload:feedback };
+export function editFeedbackSuccess(feedbackResult) {
+  return { type: types.EDIT_FEEDBACK_SUCCESS,payload:feedbackResult };
 }
 
 export function editFeedback(feedback){
   return function(dispatch){
-    return feedbackApi.editFeedback(feedback).then((feedback)=>{
-      dispatch(editFeedbackSuccess(feedback));
+    return feedbackApi.editFeedback(feedback).then((feedbackResult)=>{
+      dispatch(editFeedbackSuccess(feedbackResult));
     }).catch((error)=>{
       throw error;
     });
