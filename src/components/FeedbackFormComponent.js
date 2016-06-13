@@ -3,7 +3,7 @@ import  React, {Component, PropTypes} from 'react';
 import Input from './InputComponent';
 
 
-const FeedbackFormComponent = ({data, onChange, onSubmit}) => (
+const FeedbackFormComponent = ({data, onChange, onSubmit,isLoading}) => (
 
 
   <form onSubmit={onSubmit}>
@@ -27,11 +27,12 @@ const FeedbackFormComponent = ({data, onChange, onSubmit}) => (
              onChange={onChange}/>
       <Input label='Comments' name="comments" type="text" cssClass="form-control" value={data.comments}
              onChange={onChange}/>
-      <Input label='Creation Date' name="creationDate" type="text" cssClass="form-control"
-             value={data.creationDate} onChange={onChange}/>
-      <input type="submit" className="btn btn-default"/>
+      <input type="submit"
+             className="btn btn-default"
+             value={isLoading ?'Saving...':'Save'}
+             disabled={isLoading} />
     </div>
-  </form>
+  </form>//
 );
 
 export default FeedbackFormComponent;

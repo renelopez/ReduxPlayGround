@@ -4,7 +4,7 @@
  * src/container/App.js accordingly.
  */
 
-import {CREATE_FEEDBACK,EDIT_FEEDBACK,LOAD_FEEDBACKS_SUCCESS} from '../../actions/actionTypes';
+import {CREATE_FEEDBACK_SUCCESS,EDIT_FEEDBACK_SUCCESS,LOAD_FEEDBACKS_SUCCESS} from '../../actions/actionTypes';
 import initialState from '../initialState.js'
 import _ from 'lodash';
 
@@ -13,15 +13,16 @@ export default function(state = initialState.feedbacks, action) {
 
   switch(action.type) {
 
-    case CREATE_FEEDBACK:{
+    case CREATE_FEEDBACK_SUCCESS:{
       return [...state, action.payload];
     }
 
-    case EDIT_FEEDBACK:{
+    case EDIT_FEEDBACK_SUCCESS:{
       let indexOfEditElement= _.findIndex(state,(item)=>{return item.id === action.payload.id});
-      return [...state.slice(0,indexOfEditElement),
+      let newList= [...state.slice(0,indexOfEditElement),
               action.payload,
-              ...state.slice(indexOfEditElement + 1 )]
+              ...state.slice(indexOfEditElement + 1 )];
+      return newList;
     }
 
     case LOAD_FEEDBACKS_SUCCESS:

@@ -1,22 +1,30 @@
-/* CAUTION: When using the generators, this file is modified in some places.
- *          This is done via AST traversal - Some of your formatting may be lost
- *          in the process - no functionality should be broken though.
- *          This modifications only run once when the generator is invoked - if
- *          you edit them, they are not updated again.
- */
+'use strict';
 import React from 'react';
 import Links from './LinksComponent';
-
+import LoadingDots from './LoadingDotsComponent';
+import {connect} from 'react-redux';
 class App extends React.Component{
+
+  propTypes={
+    loading:React.PropTypes.bool.isRequired
+  };
+
 
   render(){
     return(
         <div>
           <Links />
-          {this.props.children}
+          { this.props.loading && <LoadingDots interval={100} dots={20} /> }
+          { this.props.children }
         </div>
     )
   }
 }
 
-export default App;
+function mapStateToProps(state){
+  return{
+    loading:state.ajaxCallsInProgress > 0
+  }
+}
+
+export default connect(mapStateToProps)(App);

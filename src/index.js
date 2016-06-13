@@ -34,7 +34,7 @@ render((
       <Route path="/" component={App}>
           <IndexRoute component={HomeComponent} />
           <Route path="feedbacks" component={FeedBackListContainer} />
-          <Route path="feedbacks/create" component={AddFeedbackContainer} />
+          <Route path="feedbacks/create" component={EditFeedbackDetailsContainer} />
           <Route path="feedbacks/:id" component={FeedbackDetailsContainer} />
           <Route path="feedbacks/edit/:id" component={EditFeedbackDetailsContainer} />
           <Route path="books" component={BookComponent} />

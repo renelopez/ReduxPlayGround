@@ -13,9 +13,12 @@ import booksReducer from '../reducers/books/booksReducer.js';
 import selectedBook from '../reducers/books/selectedBookReducer.js';
 import feedbacks from '../reducers/feedbacks/feedbacksReducer.js';
 import feedbackDetails from '../reducers/feedbacks/feedbackDetailsReducer.js';
+import ajaxReducer from '../reducers/common/ajaxReducer.js';
 
 
-const reducers = { books: booksReducer,
+const reducers = { 
+                   ajaxCallsInProgress:ajaxReducer, 
+                   books: booksReducer,
                    selectedBook: selectedBook,
                    feedbacks: feedbacks,
                    feedbackDetails: feedbackDetails,

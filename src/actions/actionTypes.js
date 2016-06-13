@@ -1,7 +1,7 @@
 /* Populated by react-webpack-redux:action */
 
 export const SELECT_BOOK = 'SELECT_BOOK';
-export const CREATE_FEEDBACK = 'CREATE_FEEDBACK';
+export const CREATE_FEEDBACK_SUCCESS = 'CREATE_FEEDBACK_SUCCESS';
 export const FEEDBACK_DETAILS = 'FEEDBACK_DETAILS';
 export const EDIT_FEEDBACK = 'EDIT_FEEDBACK';
 export const LOAD_FEEDBACKS_SUCCESS = 'LOAD_FEEDBACKS_SUCCESS';

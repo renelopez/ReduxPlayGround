@@ -2,9 +2,10 @@
 
 import * as types from './actionTypes';
 import feedbackApi from '../api/mockFeedback';
+import * as ajaxActions from './ajaxActions';
 
-export function createFeedback(feedback) {
-  return { type: types.CREATE_FEEDBACK,payload:feedback };
+export function createFeedbackSuccess(createdFeedback) {
+  return { type: types.CREATE_FEEDBACK_SUCCESS,payload:createdFeedback };
 }
 
 export function loadFeedbacksSuccess(feedbacks) {
@@ -20,6 +21,7 @@ export function editFeedbackSuccess(feedbackResult) {
 }
 
 export function editFeedback(feedback){
+  ajaxActions.beginAjaxCall();
   return function(dispatch){
     return feedbackApi.editFeedback(feedback).then((feedbackResult)=>{
       dispatch(editFeedbackSuccess(feedbackResult));
@@ -30,6 +32,7 @@ export function editFeedback(feedback){
 }
 
 export function loadFeedbacks(){
+  ajaxActions.beginAjaxCall();
   return function(dispatch){
     return feedbackApi.getAllFeedbacks().then((feedbacks)=>{
       dispatch(loadFeedbacksSuccess(feedbacks));
@@ -39,10 +42,24 @@ export function loadFeedbacks(){
   }
 }
 
+
+
 export function getFeedbackById(feedbackId){
+  ajaxActions.beginAjaxCall();
   return function(dispatch){
     return feedbackApi.getFeedbackById(feedbackId).then((feedback)=>{
       dispatch(getFeedbackByIdSuccess(feedback))
+    }).catch((error)=>{
+      throw error;
+    });
+  }
+}
+
+export function createFeedback(feedback){
+  ajaxActions.beginAjaxCall();
+  return function(dispatch){
+    return feedbackApi.createFeedback(feedback).then((createdFeedback)=>{
+      dispatch(createFeedbackSuccess(createdFeedback))
     }).catch((error)=>{
       throw error;
     });

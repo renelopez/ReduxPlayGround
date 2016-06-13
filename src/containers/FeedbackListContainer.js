@@ -23,7 +23,6 @@ class FeedbackListContainer extends Component{
 }
 
 function mapStateToProps(state){
-  const props={feedbackList:state.feedbacks};
-  return props;
+  return {feedbackList:state.feedbacks};
 }
 export default connect(mapStateToProps)(FeedbackListContainer);

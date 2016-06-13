@@ -1,7 +1,7 @@
 'use strict';
 import  React, {Component, PropTypes} from 'react';
 import FeedbackForm from '../components/FeedbackFormComponent.js'
-import {editFeedback,getFeedbackById} from '../actions/feedbackActions';
+import {editFeedback,getFeedbackById,createFeedback} from '../actions/feedbackActions';
 
 
 import {connect} from 'react-redux';
@@ -23,7 +23,8 @@ class EditFeedbackDetailsContainer extends Component {
   };
 
   state = {
-    feedback:Object.assign({},this.props.feedbackDetails)
+    feedback:Object.assign({},this.props.feedbackDetails),
+    isLoading:false
   };
 
   onChange = (name,value) => {
@@ -31,18 +32,28 @@ class EditFeedbackDetailsContainer extends Component {
     currentState[name]=value;
     this.setState(currentState);
   };
+  
+  redirectToList = () =>{
+    this.setState({isLoading:false});
+    this.context.router.push('/feedbacks');
+  };
 
   onSubmit=(event) =>{
     event.preventDefault();
+    this.setState({isLoading:true});
     if(!this.props.params.id) {
       this.setState({creationDate: new Date().toLocaleDateString()});
+      this.props.actions.createFeedback(this.state.feedback).then(()=>{
+        this.redirectToList();
+      });
     }
     else{
-      this.setState({editionDate:new Date().toLocaleDateString()})
+      this.setState({editionDate:new Date().toLocaleDateString()});
+      this.props.actions.editFeedback(this.state.feedback).then(()=>{
+       this.redirectToList();
+      });
     }
-    this.props.actions.editFeedback(this.state.feedback).then(()=>{
-      this.context.router.push('/feedbacks');
-    });
+    
   };
 
 
@@ -53,7 +64,8 @@ class EditFeedbackDetailsContainer extends Component {
     return (
        <FeedbackForm onChange={this.onChange}
                      onSubmit={this.onSubmit}
-                     data={this.state.feedback} />
+                     data={this.state.feedback}
+                     isLoading={this.state.isLoading}/>
     )
   }
 }
@@ -65,7 +77,8 @@ EditFeedbackDetailsContainer.contextTypes={
 function mapDispatchToProps(dispatch) {
   const actions = {
     getFeedbackById,
-    editFeedback
+    editFeedback,
+    createFeedback
   };
   return {actions: bindActionCreators(actions, dispatch)};
 }

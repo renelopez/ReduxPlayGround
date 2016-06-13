@@ -15,5 +15,6 @@ export default {
     'comments': '',
     'creationDate': ''
   },
-  ajaxCallsInProgress:0
+  ajaxCallsInProgress:0,
+  positions:[]
 }

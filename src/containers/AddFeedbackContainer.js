@@ -12,6 +12,10 @@ class AddFeedbackContainer extends Component {
   static propTypes={
     actions:PropTypes.object.isRequired
   };
+  
+  state={
+    
+  };
 
   onSubmit = (feedbackValues) => {
     this.props.actions.createFeedback(feedbackValues);

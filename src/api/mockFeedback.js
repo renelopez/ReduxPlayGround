@@ -7,7 +7,7 @@ let feedbacks = [
     name: 'Vesta Developer for Telcel',
     position: '.Net Developer',
     recruiter: 'Jennifer Mugford',
-    candidate: 'Oscar Perez',
+    candidate: 1
     reviewer: 'Rene Lopez',
     customer: 'Vesta',
     type: 'Phone Interview',
@@ -20,7 +20,7 @@ let feedbacks = [
     name: 'FMI Developer for Pharma',
     position: 'Java Developer',
     recruiter: 'Karla Montoya',
-    candidate: 'Negrito Medina',
+    candidate: 3,
     reviewer: 'Joe Zepeda',
     type: 'Practice Interview',
     customer: 'Foundation Medicine',
@@ -35,11 +35,65 @@ let feedbacks = [
     recruiter: 'Francisca Molina',
     customer: 'Bank Of Internet',
     type: 'Practice Interview',
-    candidate: 'Jimena Sanchez',
+    candidate: 2kj,
     reviewer: 'Francisco Lopez',
     score: '10.0',
     comments: 'Awesome, I liked it.',
     creationDate: new Date().toLocaleDateString()
+  }
+];
+let positions=[
+  {
+    id:1,
+    name:'Vesta Developer Senior',
+    description:'We require a Senior Developer to lead our set of products from our company',
+    skills:['Java','Spring','HTML5','Angular 2','Webpack']
+  },
+  {
+    id:2,
+    name:'QA Engineer Junior',
+    description:'We require a QA Engineer to lead our set of products from our company',
+    skills:['ISTQB','Test Case','Regression','Automation Testing']
+  },
+  {
+    id:3,
+    name:'.NET Developer Senior',
+    description:'We require a .NET Senior Developer to lead our set of products from our company',
+    skills:['.NET Core','SQL Server','Entity Framework','Angular 2','Webpack']
+  },
+  {
+    id:4,
+    name:'SCRUM Master',
+    description:'We require a SCRUM Master to lead our set of products from our company',
+    skills:['SCRUM','Management','Leadership']
+  }
+];
+let candidates=[
+  {
+    id:1,
+    name:'Rene Jezrael Lopez Cano',
+    description:'We require a Senior Developer to lead our set of products from our company',
+    skills:['Java','Spring','HTML5','Angular 2','Webpack'],
+    positions:[1,4]
+    
+  },{
+    id:2,
+    name:'Mario Hou Rodriguez',
+    description:'A developer with PUMP',
+    skills:['Imitaciones','Pump it up','Produccion'],
+    positions:[1,2]
+  },{
+    id:3,
+    name:'Angel de Toluca',
+    description:'MPF Ganador que mas quieres',
+    skills:['Pump it up','Chilango','Albures'],
+    positions:[3]
+  },{
+    id:4,
+    name:'JonaLoco',
+    description:'El mejor uberista que puedes encontrar',
+    skills:['Uber','SCRUM Master','Programming'],
+    positions:[3,4]
   }
 ];
 
@@ -56,6 +110,15 @@ class FeedbackApi {
     })
   }
 
+  static createFeedback(feedback) {
+    return new Promise((resolve, reject)=> {
+      setTimeout(()=> {
+        feedbacks.push(feedback);
+        resolve(feedback);
+      }, delay);
+    })
+  }
+
   static getFeedbackById(id) {
     return new Promise((resolve, reject)=> {
       setTimeout(()=> {
@@ -68,6 +131,8 @@ class FeedbackApi {
       }, delay);
     })
   }
+
+
 
   static editFeedback(givenFeedback) {
     return new Promise((resolve, reject)=> {

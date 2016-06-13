@@ -4,7 +4,7 @@ import initialState from '../initialState.js'
 import {BEGIN_AJAX_CALL,AJAX_CALL_ERROR} from '../../actions/actionTypes';
 
 function isSuccessCallback(type){
-  return type.includes('_SUCCESS')
+  return type.includes('_SUCCESS');
 }
 
 export default function (state = initialState.ajaxCallsInProgress, action) {
