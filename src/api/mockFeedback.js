@@ -7,7 +7,7 @@ let feedbacks = [
     name: 'Vesta Developer for Telcel',
     position: '.Net Developer',
     recruiter: 'Jennifer Mugford',
-    candidate: 1
+    candidate: 1,
     reviewer: 'Rene Lopez',
     customer: 'Vesta',
     type: 'Phone Interview',
@@ -35,7 +35,7 @@ let feedbacks = [
     recruiter: 'Francisca Molina',
     customer: 'Bank Of Internet',
     type: 'Practice Interview',
-    candidate: 2kj,
+    candidate: 2,
     reviewer: 'Francisco Lopez',
     score: '10.0',
     comments: 'Awesome, I liked it.',
@@ -102,10 +102,27 @@ const generateId = ()=> {
 };
 
 class FeedbackApi {
+
   static getAllFeedbacks() {
     return new Promise((resolve, reject)=> {
       setTimeout(()=> {
         resolve(Object.assign([], feedbacks));
+      }, delay);
+    })
+  }
+
+  static getAllPositions() {
+    return new Promise((resolve, reject)=> {
+      setTimeout(()=> {
+        resolve(Object.assign([], positions));
+      }, delay);
+    })
+  }
+
+  static getAllCandidates() {
+    return new Promise((resolve, reject)=> {
+      setTimeout(()=> {
+        resolve(Object.assign([], candidates));
       }, delay);
     })
   }
@@ -148,6 +165,8 @@ class FeedbackApi {
       }, delay);
     })
   }
+
+
 }
 
 export default FeedbackApi;

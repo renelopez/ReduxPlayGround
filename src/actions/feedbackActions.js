@@ -1,8 +1,8 @@
 "use strict";
 
 import * as types from './actionTypes';
-import feedbackApi from '../api/mockFeedback';
 import * as ajaxActions from './ajaxActions';
+import feedbackApi from '../api/mockFeedback';
 
 export function createFeedbackSuccess(createdFeedback) {
   return { type: types.CREATE_FEEDBACK_SUCCESS,payload:createdFeedback };
