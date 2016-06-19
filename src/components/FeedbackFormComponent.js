@@ -1,6 +1,7 @@
 'use strict';
 import  React, {Component, PropTypes} from 'react';
 import Input from './InputComponent';
+import Select from './SelectComponent';
 
 
 const FeedbackFormComponent = ({data, onChange, onSubmit,isLoading}) => (
@@ -13,7 +14,7 @@ const FeedbackFormComponent = ({data, onChange, onSubmit,isLoading}) => (
              onChange={onChange}/>
       <Input label='Position' name="position" type="text" cssClass="form-control" value={data.position}
              onChange={onChange}/>
-      <Input label='Candidate' name="candidate" type="text" cssClass="form-control" value={data.candidate}
+      <Select label='Candidate' name="candidate" type="text" options={data.candidates}
              onChange={onChange}/>
       <Input label='Reviewer' name="reviewer" type="text" cssClass="form-control" value={data.reviewer}
              onChange={onChange}/>

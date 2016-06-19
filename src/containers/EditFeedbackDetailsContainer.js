@@ -65,7 +65,8 @@ class EditFeedbackDetailsContainer extends Component {
        <FeedbackForm onChange={this.onChange}
                      onSubmit={this.onSubmit}
                      data={this.state.feedback}
-                     isLoading={this.state.isLoading}/>
+                     isLoading={this.state.isLoading}
+                     candidate={this.props.candidates}/>
     )
   }
 }
@@ -100,12 +101,16 @@ function mapStateToProps(state, ownProps) {
     'creationDate': ''
   };
   if(ownProps.params.id){
-    props = {feedbackDetails: state.feedbackDetails};
+    props = {
+      feedbackDetails: state.feedbackDetails
+    };
   }
   else{
     props={feedbackDetails:feedback}
   }
+  
+  let candidatesFormattedForDropdown=getCandidatesFormattedForDropdown(state.candidates);
 
-  return props;
+  return Object.assign({},props,candidatesFormattedForDropdown);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(EditFeedbackDetailsContainer);
