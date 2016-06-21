@@ -1,7 +1,9 @@
 'use strict';
 import  React, {Component, PropTypes} from 'react';
-import FeedbackForm from '../components/FeedbackFormComponent.js'
-import {editFeedback,getFeedbackById,createFeedback} from '../actions/feedbackActions';
+import FeedbackForm from './FeedbackFormComponent.js'
+import {editFeedback,getFeedbackById,createFeedback} from '../../actions/feedbackActions';
+import {loadCandidates} from '../../actions/candidatesActions';
+import {getCandidatesFormattedForDropdown} from '../../reducers/index';
 
 
 import {connect} from 'react-redux';
@@ -10,6 +12,7 @@ import {bindActionCreators} from 'redux';
 class EditFeedbackDetailsContainer extends Component {
   constructor(props) {
     super(props);
+    props.actions.loadCandidates();
     if(props.params.id) {
       props.actions.getFeedbackById(props.params.id).then(()=>{
         this.setState({'feedback':Object.assign({},this.props.feedbackDetails)});
@@ -66,7 +69,7 @@ class EditFeedbackDetailsContainer extends Component {
                      onSubmit={this.onSubmit}
                      data={this.state.feedback}
                      isLoading={this.state.isLoading}
-                     candidate={this.props.candidates}/>
+                     options={this.props.candidates}/>
     )
   }
 }
@@ -79,7 +82,8 @@ function mapDispatchToProps(dispatch) {
   const actions = {
     getFeedbackById,
     editFeedback,
-    createFeedback
+    createFeedback,
+    loadCandidates
   };
   return {actions: bindActionCreators(actions, dispatch)};
 }
@@ -102,15 +106,16 @@ function mapStateToProps(state, ownProps) {
   };
   if(ownProps.params.id){
     props = {
-      feedbackDetails: state.feedbackDetails
+      feedbackDetails: state.feedbackDetails,
+      candidates:getCandidatesFormattedForDropdown(state)
     };
   }
   else{
-    props={feedbackDetails:feedback}
+    props={
+      feedbackDetails:feedback,
+      candidates:getCandidatesFormattedForDropdown(state)
+    }
   }
-  
-  let candidatesFormattedForDropdown=getCandidatesFormattedForDropdown(state.candidates);
-
-  return Object.assign({},props,candidatesFormattedForDropdown);
+  return props;
 }
 export default connect(mapStateToProps, mapDispatchToProps)(EditFeedbackDetailsContainer);

@@ -1,12 +1,12 @@
 'use strict';
 import  React, {Component, PropTypes} from 'react';
 
-import PositionForm from '../components/PositionFormComponent.js'
+import PositionForm from './PositionFormComponent.js'
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {createPosition} from '../actions/positionActions';
+import {createPosition} from '../../actions/positionActions';
 
 class AddPositionContainer extends Component {
 

@@ -7,7 +7,7 @@ import React, {
 
 
 import { connect } from 'react-redux';
-import FeedbackListComponent from '../components/FeedbackListComponent';
+import FeedbackListComponent from './FeedbackListComponent';
 //
 class FeedbackListContainer extends Component{
 

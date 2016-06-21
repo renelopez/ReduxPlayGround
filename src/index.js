@@ -7,15 +7,15 @@ import { render } from 'react-dom';
 
 
 import App from './components/AppComponent';
-import BookComponent from './components/BookComponent';
+import BookComponent from './components/book/BookComponent';
 import HomeComponent from './components/HomeComponent';
-import FeedbackDetailsContainer from './containers/FeedbackDetailsContainer';
-import EditFeedbackDetailsContainer from './containers/EditFeedbackDetailsContainer';
+import FeedbackDetailsContainer from './components/feedback/FeedbackDetailsContainer';
+import EditFeedbackDetailsContainer from './components/feedback/EditFeedbackDetailsContainer';
 
 import { IndexRoute,Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux'
 
-import FeedBackListContainer from './containers/FeedbackListContainer';
+import FeedBackListContainer from './components/feedback/FeedbackListContainer';
 import {loadFeedbacks} from './actions/feedbackActions';
 import {loadBooks} from './actions/bookActions';
 

@@ -16,5 +16,6 @@ export default {
     'creationDate': ''
   },
   ajaxCallsInProgress:0,
-  positions:[]
+  positions:[],
+  candidates:[]
 }

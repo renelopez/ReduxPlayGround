@@ -1,6 +1,6 @@
 'use strict';
 import  React, {Component, PropTypes} from 'react';
-import Input from './InputComponent';
+import Input from '../common/InputComponent';
 
 
 class PositionFormComponent extends Component {

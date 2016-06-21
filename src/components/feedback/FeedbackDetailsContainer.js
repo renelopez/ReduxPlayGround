@@ -5,9 +5,9 @@ import  React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getFeedbackById} from '../actions/feedbackActions';
+import {getFeedbackById} from '../../actions/feedbackActions';
 
-import FeedbackDetailsComponent from '../components/FeedbackDetailsComponent';
+import FeedbackDetailsComponent from './FeedbackDetailsComponent';
 
 class FeedbackDetailsContainer extends Component {
   constructor(props) {

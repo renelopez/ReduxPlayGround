@@ -1,11 +1,11 @@
 'use strict';
 import React, {Component, PropTypes} from 'react';
 
-import FeedbackForm from '../components/FeedbackFormComponent.js'
+import FeedbackForm from './FeedbackFormComponent.js'
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {createFeedback} from '../actions/feedbackActions'
+import {createFeedback} from '../../actions/feedbackActions'
 
 class AddFeedbackContainer extends Component {
 

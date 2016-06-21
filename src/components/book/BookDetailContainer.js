@@ -3,7 +3,7 @@ import  React, {Component,PropTypes} from 'react';
 
 import { connect } from 'react-redux';
 
-import BookDetailComponent from '../components/BookDetailComponent';
+import BookDetailComponent from './BookDetailComponent';
 
 class BookDetailContainer extends Component {
 

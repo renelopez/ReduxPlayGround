@@ -1,7 +1,7 @@
 'use strict';
 import React from 'react';
-import Links from './LinksComponent';
-import LoadingDots from './LoadingDotsComponent';
+import Links from './common/LinksComponent';
+import LoadingDots from './common/LoadingDotsComponent';
 import {connect} from 'react-redux';
 class App extends React.Component{
 

@@ -1,10 +1,10 @@
 'use strict';
 import  React, {Component, PropTypes} from 'react';
-import Input from './InputComponent';
-import Select from './SelectComponent';
+import Input from '../common/InputComponent';
+import Select from '../common/SelectComponent';
 
 
-const FeedbackFormComponent = ({data, onChange, onSubmit,isLoading}) => (
+const FeedbackFormComponent = ({data, onChange, onSubmit,isLoading,options}) => (
 
 
   <form onSubmit={onSubmit}>
@@ -14,7 +14,7 @@ const FeedbackFormComponent = ({data, onChange, onSubmit,isLoading}) => (
              onChange={onChange}/>
       <Input label='Position' name="position" type="text" cssClass="form-control" value={data.position}
              onChange={onChange}/>
-      <Select label='Candidate' name="candidate" type="text" options={data.candidates}
+      <Select label='Candidate' name="candidate" type="text" options={options} defaultOption={"Please select a candidate"}
              onChange={onChange}/>
       <Input label='Reviewer' name="reviewer" type="text" cssClass="form-control" value={data.reviewer}
              onChange={onChange}/>

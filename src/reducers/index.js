@@ -1,11 +1,4 @@
-/* Combine all available reducers to a single root reducer.
- *
- * CAUTION: When using the generators, this file is modified in some places.
- *          This is done via AST traversal - Some of your formatting may be lost
- *          in the process - no functionality should be broken though.
- *          This modifications only run once when the generator is invoked - if
- *          you edit them, they are not updated again.
- */
+"use strict";
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux'
 
@@ -14,13 +7,20 @@ import selectedBook from '../reducers/books/selectedBookReducer.js';
 import feedbacks from '../reducers/feedbacks/feedbacksReducer.js';
 import feedbackDetails from '../reducers/feedbacks/feedbackDetailsReducer.js';
 import ajaxReducer from '../reducers/common/ajaxReducer.js';
+import candidatesReducer,* as fromCandidates from '../reducers/candidates/candidatesReducer';
 
 
 const reducers = { 
                    ajaxCallsInProgress:ajaxReducer, 
                    books: booksReducer,
+                   candidates:candidatesReducer,
                    selectedBook: selectedBook,
                    feedbacks: feedbacks,
                    feedbackDetails: feedbackDetails,
                    routing: routerReducer};
-module.exports = combineReducers(reducers);
+export default combineReducers(reducers);
+
+
+export function getCandidatesFormattedForDropdown(state){
+  return fromCandidates.getCandidatesFormattedForDropdown(state.candidates);
+}
