@@ -1,7 +1,7 @@
 'use strict';
-import React from 'react';
+import React,{PropTypes} from 'react';
 
-let FeedbackDetails = ({ details }) => (
+const FeedbackDetails = ({ details }) => (
     <div className="container-fluid">
       <h3>Details for Feedback {details.name}</h3>
       <div className="form-group">
@@ -66,6 +66,10 @@ let FeedbackDetails = ({ details }) => (
       </div>
     </div>
 );
+
+FeedbackDetails.propTypes={
+  details:PropTypes.object.isRequired
+};
 
 export default FeedbackDetails;
 

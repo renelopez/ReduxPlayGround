@@ -8,7 +8,6 @@ export default function(state = initialState.candidates, action) {
   switch(action.type) {
 
     case types.LOAD_CANDIDATES_SUCCESS:
-        debugger;
           return action.payload;
       break;
 

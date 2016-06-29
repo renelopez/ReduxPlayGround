@@ -1,14 +1,9 @@
 'use strict';
-import React from 'react';
+import React,{PropTypes} from 'react';
 import Links from './common/LinksComponent';
 import LoadingDots from './common/LoadingDotsComponent';
 import {connect} from 'react-redux';
 class App extends React.Component{
-
-  propTypes={
-    loading:React.PropTypes.bool.isRequired
-  };
-
 
   render(){
     return(
@@ -20,6 +15,10 @@ class App extends React.Component{
     )
   }
 }
+
+App.propTypes = {
+  loading: PropTypes.bool.isRequired
+};
 
 function mapStateToProps(state){
   return{

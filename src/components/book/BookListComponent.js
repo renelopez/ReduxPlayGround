@@ -1,5 +1,5 @@
 'use strict';
-import React from 'react';
+import React ,{PropTypes} from 'react';
 
 let BookList = ({books,onSelectBook}) => {
   let booksToRender = books.map((book) => {
@@ -17,6 +17,11 @@ let BookList = ({books,onSelectBook}) => {
         </ul>
       </div>
   )
+};
+
+BookList.propTypes={
+  books:PropTypes.array.isRequired,
+  onSelectBook:PropTypes.func.isRequired
 };
 
 export default BookList;

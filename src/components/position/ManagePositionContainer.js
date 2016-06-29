@@ -8,7 +8,7 @@ import {bindActionCreators} from 'redux';
 
 import {createPosition} from '../../actions/positionActions';
 
-class AddPositionContainer extends Component {
+class ManagePositionContainer extends Component {
 
   static propTypes={
     actions:PropTypes.object.isRequired
@@ -35,4 +35,4 @@ function mapDispatchToProps(dispatch) {
   return {actions: bindActionCreators(actions, dispatch)};
 }
 
-export default connect(null, mapDispatchToProps)(AddPositionContainer);
+export default connect(null, mapDispatchToProps)(ManagePositionContainer);

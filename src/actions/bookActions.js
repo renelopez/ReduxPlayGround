@@ -12,8 +12,16 @@ export function loadBooksSuccess(books) {
   return { type: types.LOAD_BOOKS_SUCCESS,payload:books};
 }
 
+export function loadBooksFailure(error) {
+  return { type: types.LOAD_BOOKS_FAILURE,payload:error};
+}
+
 export function getBookByIdSuccess(book) {
   return { type: types.GET_BOOK_BY_ID_SUCCESS,payload:book};
+}
+
+export function getBookByIdFailure(error) {
+  return { type: types.GET_BOOK_BY_ID_FAILURE,payload:error};
 }
 
 export function loadBooks(){
@@ -21,9 +29,9 @@ export function loadBooks(){
   return function(dispatch){
     return bookApi.getAllBooks().then((books)=>{
       dispatch(loadBooksSuccess(books))
-    }).catch((error)=>{
-      throw error;
-    });
+    },(error)=>{
+      dispatch(loadBooksFailure(error))
+    })
   }
 }
 
@@ -31,9 +39,9 @@ export function getBookById(bookId){
   return function(dispatch){
     return bookApi.getBookById(bookId).then((book)=>{
       dispatch(getBookByIdSuccess(book))
-    }).catch((error)=>{
-      throw error;
-    });
+    },(error)=>{
+      dispatch(getBookByIdFailure(error))
+    })
   }
 }
 

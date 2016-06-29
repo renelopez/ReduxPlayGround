@@ -15,29 +15,26 @@ class FeedbackDetailsContainer extends Component {
     props.actions.getFeedbackById(props.params.id);
   }
 
-  static propTypes={
-    feedbackDetails:PropTypes.object.isRequired
-  };
-
   render() {
 
     return (
-        <FeedbackDetailsComponent details={this.props.feedbackDetails} />
+        <FeedbackDetailsComponent details={this.props.feedbackDetails}/>
     )
   }
 }
+
+FeedbackDetailsComponent.propTypes = {
+  feedbackDetails: PropTypes.object.isRequired
+};
 
 function mapDispatchToProps(dispatch) {
   const actions = {
     getFeedbackById
   };
-  const actionMap = {actions: bindActionCreators(actions, dispatch)};
-  return actionMap;
+  return {actions: bindActionCreators(actions, dispatch)};
 }
 
 function mapStateToProps(state, ownProps) {
-
-  const props = {feedbackDetails: state.feedbackDetails, id: ownProps.params.id};
-  return props;
+  return {feedbackDetails: state.feedbackDetails, id: ownProps.params.id};
 }
 export default connect(mapStateToProps, mapDispatchToProps)(FeedbackDetailsContainer);

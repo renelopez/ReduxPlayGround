@@ -6,6 +6,8 @@ import booksReducer from '../reducers/books/booksReducer.js';
 import selectedBook from '../reducers/books/selectedBookReducer.js';
 import feedbacks from '../reducers/feedbacks/feedbacksReducer.js';
 import feedbackDetails from '../reducers/feedbacks/feedbackDetailsReducer.js';
+import positionReducer from '../reducers/position/positionReducer.js';
+import positionDetails from '../reducers/position/positionDetailsReducer';
 import ajaxReducer from '../reducers/common/ajaxReducer.js';
 import candidatesReducer,* as fromCandidates from '../reducers/candidates/candidatesReducer';
 
@@ -16,8 +18,11 @@ const reducers = {
                    candidates:candidatesReducer,
                    selectedBook: selectedBook,
                    feedbacks: feedbacks,
+                   positions: positionReducer,
+                   positionDetails: positionDetails,
                    feedbackDetails: feedbackDetails,
-                   routing: routerReducer};
+                   routing: routerReducer
+};
 export default combineReducers(reducers);
 
 

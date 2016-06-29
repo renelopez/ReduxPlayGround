@@ -1,8 +1,8 @@
 'use strict';
-import React ,{ Component,PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 import {selectBook} from '../../actions/bookActions';
 import BookListComponent from './BookListComponent';
@@ -10,31 +10,32 @@ import BookListComponent from './BookListComponent';
 /* Populated by react-webpack-redux:reducer */
 class BooksContainer extends Component {
 
-  static propTypes = {
-    actions: PropTypes.object.isRequired,
-    books: PropTypes.array.isRequired
-  };
-
-  onSelectBook=(book) => {
+  onSelectBook = (book) => {
     this.props.actions.selectBook(book);
   };
 
   render() {
-    return(
-      <BookListComponent books={this.props.books} onSelectBook={this.onSelectBook}/>
+    return (
+        <BookListComponent books={this.props.books} onSelectBook={this.onSelectBook}/>
     )
   }
 }
 
+BooksContainer.propTypes = {
+  actions: PropTypes.object.isRequired,
+  books: PropTypes.array.isRequired,
+  onSelectBook:PropTypes.object.isRequired
+};
+
 function mapStateToProps(state) {
   /* Populated by react-webpack-redux:reducer */
-  const props = { books: state.books };
-  return props;
+  return {books: state.books};
 }
- function mapDispatchToProps(dispatch) {
-   const actions = {
-     selectBook
-   };
-   return { actions: bindActionCreators(actions, dispatch) };
- }
-export default connect(mapStateToProps,mapDispatchToProps)(BooksContainer);
+
+function mapDispatchToProps(dispatch) {
+  const actions = {
+    selectBook
+  };
+  return {actions: bindActionCreators(actions, dispatch)};
+}
+export default connect(mapStateToProps, mapDispatchToProps)(BooksContainer);

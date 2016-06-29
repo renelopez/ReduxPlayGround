@@ -15,6 +15,12 @@ export default {
     'comments': '',
     'creationDate': ''
   },
+  positionDetails:{
+    'id': '',
+    'name': '',
+    'description': '',
+    'skills':[]    
+  },
   ajaxCallsInProgress:0,
   positions:[],
   candidates:[]

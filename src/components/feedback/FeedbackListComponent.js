@@ -4,10 +4,10 @@
  *          This modifications only run once when the generator is invoked - if
  *          you edit them, they are not updated again.
  */
-import React from 'react';
+import React,{PropTypes} from 'react';
 import { Link } from 'react-router';
 
-let FeedbackList = ({ list }) => {
+const FeedbackList = ({ list }) => {
   let listToRender = list.map((item) => {
     return (
         <tr key={item.name}>
@@ -45,6 +45,10 @@ let FeedbackList = ({ list }) => {
         </table>
       </div>
   );
+};
+
+FeedbackList.propTypes={
+  list:PropTypes.array.isRequired
 };
 
 export default FeedbackList;

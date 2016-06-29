@@ -6,14 +6,18 @@ export function loadCandidatesSuccess(candidates) {
   return { type: types.LOAD_CANDIDATES_SUCCESS,payload:candidates }
 }
 
+export function loadCandidatesFailure(error) {
+  return { type: types.LOAD_CANDIDATES_FAILURE,payload:error }
+}
+
 export function loadCandidates(){
   ajaxActions.beginAjaxCall();
   return function(dispatch){
     return feedbackApi.getAllCandidates().then((candidates)=>{
       dispatch(loadCandidatesSuccess(candidates));
-    }).catch((error)=>{
-      throw error;
-    });
+    },(error)=>{
+      dispatch(loadCandidatesFailure(error))
+    })
   }
 }
 

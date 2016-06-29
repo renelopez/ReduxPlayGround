@@ -11,6 +11,7 @@ const Links= () => (
         <li><Link to='/'>Feedtrack</Link></li>
         <li><Link to='/books'>Books</Link></li>
         <li><Link to='/feedbacks'>Feedbacks</Link></li>
+        <li><Link to='/position'>Positions</Link></li>
       </ul>
     </div>
   </nav>
