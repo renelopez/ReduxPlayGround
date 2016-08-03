@@ -3,6 +3,8 @@
 import * as types from './actionTypes';
 import * as ajaxActions from './ajaxActions';
 import feedbackApi from '../api/mockFeedback';
+import {normalize} from 'normalizr';
+import {feedback,arrayOfFeedbacks} from './schema';
 
 export function createFeedbackSuccess(createdFeedback) {
   return { type: types.CREATE_FEEDBACK_SUCCESS,payload:createdFeedback };
@@ -13,6 +15,7 @@ export function createFeedbackFailure(error) {
 }
 
 export function loadFeedbacksSuccess(feedbacks) {
+  console.log('Normalizado:',feedbacks);
   return { type: types.LOAD_FEEDBACKS_SUCCESS,payload:feedbacks };
 }
 
@@ -51,7 +54,7 @@ export function loadFeedbacks(){
   ajaxActions.beginAjaxCall();
   return function(dispatch){
     return feedbackApi.getAllFeedbacks().then((feedbacks)=>{
-      dispatch(loadFeedbacksSuccess(feedbacks));
+      dispatch(loadFeedbacksSuccess(normalize(feedbacks,arrayOfFeedbacks)));
     },(error)=>{
       dispatch(loadFeedbacksFailure(error))
     })

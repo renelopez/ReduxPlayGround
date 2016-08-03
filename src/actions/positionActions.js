@@ -2,6 +2,7 @@ import * as types from './actionTypes';
 import * as ajaxActions from './ajaxActions';
 import positionApi from '../api/mockPosition';
 
+
 export function loadPositionsSuccess(position) {
   return { type: types.LOAD_POSITIONS_SUCCESS,payload:position };
 }
