@@ -6,6 +6,7 @@ import {bindActionCreators} from 'redux';
 
 import {selectBook} from '../../actions/bookActions';
 import BookListComponent from './BookListComponent';
+import {getAllBooks}  from '../../selectors/bookSelectors';
 
 /* Populated by react-webpack-redux:reducer */
 class BooksContainer extends Component {
@@ -28,8 +29,7 @@ BooksContainer.propTypes = {
 };
 
 function mapStateToProps(state) {
-  /* Populated by react-webpack-redux:reducer */
-  return {books: state.books};
+  return {books: getAllBooks(state)};
 }
 
 function mapDispatchToProps(dispatch) {

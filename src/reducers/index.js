@@ -3,7 +3,6 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux'
 
 import booksReducer from '../reducers/books/booksReducer.js';
-import selectedBook from '../reducers/books/selectedBookReducer.js';
 import feedbacks from '../reducers/feedbacks/feedbacksReducer.js';
 import feedbackDetails from '../reducers/feedbacks/feedbackDetailsReducer.js';
 import positionReducer from '../reducers/position/positionReducer.js';
@@ -12,11 +11,10 @@ import ajaxReducer from '../reducers/common/ajaxReducer.js';
 import candidatesReducer,* as fromCandidates from '../reducers/candidates/candidatesReducer';
 
 
-const reducers = { 
-                   ajaxCallsInProgress:ajaxReducer, 
+const reducers = {
+                   ajaxCallsInProgress:ajaxReducer,
                    books: booksReducer,
                    candidates:candidatesReducer,
-                   selectedBook: selectedBook,
                    feedbacks: feedbacks,
                    positions: positionReducer,
                    positionDetails: positionDetails,

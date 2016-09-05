@@ -3,6 +3,7 @@
 import delay from './delay';
 const books=[
   {
+    id:1,
     title:'Orly Chan',
     price:200,
     author:'Rene Lopez',
@@ -13,6 +14,7 @@ const books=[
     genre:'Mystery'
   },
   {
+    id:2,
     title:'Satan',
     price:150,
     age:2012,
@@ -22,6 +24,7 @@ const books=[
     genre:'Kabala'
   },
   {
+    id:3,
     title:'Harry Potter',
     price:200,
     age:1902,

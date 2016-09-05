@@ -4,7 +4,7 @@ import * as actionTypes from '../../actions/actionTypes';
 import initialState from '../initialState.js'
 import _ from 'lodash';
 
-module.exports = function(state = initialState.positions, action) {
+export default function(state = initialState.positions, action) {
 
   switch(action.type) {
 

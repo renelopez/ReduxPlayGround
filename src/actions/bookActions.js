@@ -3,13 +3,17 @@
 import * as types from './actionTypes';
 import * as ajaxActions from './ajaxActions';
 import bookApi from '../api/mockBook';
+import {normalize} from 'normalizr';
+import * as schema from '../schemas/bookSchema';
 
 export function selectBook(book) {
   return { type: types.SELECT_BOOK,payload:book };
 }
 
 export function loadBooksSuccess(books) {
-  return { type: types.LOAD_BOOKS_SUCCESS,payload:books};
+  console.log("Without normalizr",books);
+  console.log('Normalized',normalize(books,schema.arrayOfBooks));
+  return { type: types.LOAD_BOOKS_SUCCESS,response:normalize(books,schema.arrayOfBooks)};
 }
 
 export function loadBooksFailure(error) {

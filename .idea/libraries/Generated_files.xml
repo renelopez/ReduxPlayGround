@@ -1,0 +1,35 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/src/reducers/index-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/index-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/actions/bookActions-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/api/mockBook-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/schemas/feedbackSchema-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/reducers/books/booksReducer-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/actions/feedbackActions-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/selectors/bookSelectors-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/schemas/bookSchema-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/components/book/BookDetailContainer-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/reducers/position/positionReducer-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/components/book/BookDetailComponent-compiled.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/actions/bookActions-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/reducers/books/booksReducer-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/selectors/bookSelectors-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/reducers/position/positionReducer-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/reducers/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/api/mockBook-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/schemas/feedbackSchema-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/actions/feedbackActions-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/schemas/bookSchema-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/components/book/BookDetailContainer-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/components/book/BookDetailComponent-compiled.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

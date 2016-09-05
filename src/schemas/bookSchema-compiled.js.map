@@ -1,0 +1,1 @@
+{"version":3,"sources":["bookSchema.js"],"names":[],"mappings":";;;;;;;AAAA;;AAEO,IAAM,wBAAM,sBAAW,OAAX,CAAN;AACN,IAAM,sCAAa,wBAAQ,KAAR,CAAb","file":"bookSchema-compiled.js","sourcesContent":["import {Schema,arrayOf} from 'normalizr'\n\nexport const books=new Schema('books');\nexport const arrayOfBooks=arrayOf(books);\n"]}

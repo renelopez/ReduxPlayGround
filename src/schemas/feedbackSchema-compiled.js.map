@@ -1,0 +1,1 @@
+{"version":3,"sources":["feedbackSchema.js"],"names":[],"mappings":";;;;;;;AAAA;;AAEO,IAAM,8BAAS,sBAAW,WAAX,CAAT;AACN,IAAM,8CAAiB,wBAAQ,QAAR,CAAjB","file":"feedbackSchema-compiled.js","sourcesContent":["import {Schema , arrayOf } from 'normalizr';\r\n\r\nexport const feedback=new Schema('feedbacks');\r\nexport const arrayOfFeedbacks=arrayOf(feedback);\r\n"]}

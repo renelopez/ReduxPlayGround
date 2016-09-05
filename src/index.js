@@ -24,6 +24,7 @@ import {loadPositions} from './actions/positionActions.js';
 
 import { Provider } from 'react-redux';
 import configureStore from './stores';
+import initialState from './reducers/initialState';
 const store = configureStore();
 store.dispatch(loadFeedbacks());
 store.dispatch(loadBooks());
