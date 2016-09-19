@@ -1,30 +1,37 @@
 "use strict";
 
 import * as types from '../../actions/actionTypes';
-import initialState from '../initialState.js'
+import {combineReducers} from 'redux'
 
-export default function(state = initialState.candidates, action) {
+const byId = function(state = {}, action) {
 
   switch(action.type) {
 
     case types.LOAD_CANDIDATES_SUCCESS:
-          return action.payload;
+          return {...state,
+                  ...action.response.entities.candidates};
       break;
 
     default: {
       return state;
     }
   }
-}
+};
 
-export function getCandidatesFormattedForDropdown(state){
-  console.log(state);
-  return state.map((item)=>{
-    return {
-      value: item.id,
-      text: item.name
-    };
-  })
-}
+const candidateIds = (state = [], action)=> {
+  switch (action.type) {
+    case types.LOAD_CANDIDATES_SUCCESS: {
+      return action.response.result;
+    }
+  }
+  return state;
+};
+
+const candidatesModule=combineReducers({
+  byId: byId,
+  candidateIds: candidateIds
+});
+
+export default candidatesModule;
 
 

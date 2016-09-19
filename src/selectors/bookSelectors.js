@@ -1,14 +1,12 @@
 'use strict';
-import booksReducer from '../reducers/books/booksReducer';
 
-
-export function getBookById(state,id){
-  return state.books.byId[id];
+export function getBookById(books,id){
+  return books.byId[id];
 }
 
-export function getAllBooks(state){
-  return state.books.bookIds.map((id)=>{
-    return getBookById(state,id);
+export function getAllBooks(books){
+  return books.bookIds.map((id)=>{
+    return getBookById(books,id);
   });
 }
 

@@ -8,13 +8,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _actionTypes = require('../../actions/actionTypes');
 
-var actionTypes = _interopRequireWildcard(_actionTypes);
+var types = _interopRequireWildcard(_actionTypes);
 
 var _redux = require('redux');
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var byId = function byId() {
   var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
@@ -23,34 +21,35 @@ var byId = function byId() {
 
   switch (action.type) {
 
-    case actionTypes.LOAD_POSITIONS_SUCCESS:
-      {
-        return _extends({}, state, action.response.entities.positions);
-      }
+    case types.LOAD_CANDIDATES_SUCCESS:
+      return _extends({}, state, action.response.entities.candidates);
+      break;
+
     default:
-      return state;
+      {
+        return state;
+      }
   }
 };
 
-var positionIds = function positionIds() {
+var candidateIds = function candidateIds() {
   var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
   var action = arguments[1];
 
   switch (action.type) {
-    case actionTypes.CREATE_POSITION_SUCCESS:
+    case types.LOAD_CANDIDATES_SUCCESS:
       {
-        return [].concat(_toConsumableArray(state), [action.response.result]);
+        return action.response.result;
       }
-    default:
-      return state;
   }
+  return state;
 };
 
-var positionsModule = (0, _redux.combineReducers)({
+var candidatesModule = (0, _redux.combineReducers)({
   byId: byId,
-  positionIds: positionIds
+  candidateIds: candidateIds
 });
 
-exports.default = positionsModule;
+exports.default = candidatesModule;
 
-//# sourceMappingURL=positionReducer-compiled.js.map
+//# sourceMappingURL=candidatesReducer-compiled.js.map

@@ -29,7 +29,7 @@ BooksContainer.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return {books: getAllBooks(state)};
+  return {books: getAllBooks(state.books)};
 }
 
 function mapDispatchToProps(dispatch) {

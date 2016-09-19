@@ -1,31 +1,39 @@
-
+"use strict";
 
 import * as actionTypes from '../../actions/actionTypes';
-import initialState from '../initialState.js'
-import _ from 'lodash';
+import {combineReducers} from 'redux'
 
-export default function(state = initialState.positions, action) {
+const byId = function(state = {}, action) {
 
-  switch(action.type) {
+  switch (action.type) {
 
-    case actionTypes.LOAD_POSITIONS_SUCCESS:{
-      return action.payload;
+    case actionTypes.LOAD_POSITIONS_SUCCESS:
+    {
+      return {
+        ...state,
+        ...action.response.entities.positions
+      };
     }
-
-    case actionTypes.CREATE_POSITION:{
-      return [...state, action.payload];
-    }
-
-    case actionTypes.EDIT_POSITION:{
-      let indexOfEditElement= _.findIndex(state,(item)=>{return item.id === action.payload.id});
-      return [...state.slice(0,indexOfEditElement),
-              action.payload,
-              ...state.slice(indexOfEditElement + 1 )]
-    }
-
-    default: {
-      /* Return original state if no actions were consumed. */
+    default:
       return state;
-    }
   }
 };
+
+const positionIds=function(state=[],action) {
+  switch (action.type) {
+    case actionTypes.CREATE_POSITION_SUCCESS: {
+      return [...state, action.response.result]
+    }
+    d efault:
+      return state;
+  }
+};
+
+const positionsModule=combineReducers({
+  byId:byId,
+  positionIds:positionIds
+});
+
+export default positionsModule;
+
+
