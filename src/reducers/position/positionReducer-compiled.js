@@ -16,6 +16,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var byId = function byId() {
   var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
   var action = arguments[1];
@@ -24,8 +26,13 @@ var byId = function byId() {
   switch (action.type) {
 
     case actionTypes.LOAD_POSITIONS_SUCCESS:
+    case actionTypes.CREATE_POSITION_SUCCESS:
       {
         return _extends({}, state, action.response.entities.positions);
+      }
+    case actionTypes.EDIT_POSITION_SUCCESS:
+      {
+        return _extends({}, state, _defineProperty({}, action.editedId, action.editedItem));
       }
     default:
       return state;

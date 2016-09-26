@@ -15,7 +15,9 @@
         <item url="file://$PROJECT_DIR$/src/actions/feedbackActions-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/components/book/BookDetailContainer-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/schemas/bookSchema-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/actions/positionActions-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/components/book/BookDetailComponent-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/actions/actionTypes-compiled.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -32,7 +34,9 @@
       <root url="file://$PROJECT_DIR$/src/actions/feedbackActions-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/components/book/BookDetailContainer-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/schemas/bookSchema-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/actions/positionActions-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/components/book/BookDetailComponent-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/actions/actionTypes-compiled.js" />
     </CLASSES>
     <SOURCES />
   </library>

@@ -8,11 +8,19 @@ const byId = function(state = {}, action) {
   switch (action.type) {
 
     case actionTypes.LOAD_POSITIONS_SUCCESS:
+    case actionTypes.CREATE_POSITION_SUCCESS:
     {
       return {
         ...state,
         ...action.response.entities.positions
       };
+    }
+    case actionTypes.EDIT_POSITION_SUCCESS:
+    {
+      return{
+        ...state,
+        [action.editedId] : action.editedItem
+      }
     }
     default:
       return state;
@@ -24,7 +32,7 @@ const positionIds=function(state=[],action) {
     case actionTypes.CREATE_POSITION_SUCCESS: {
       return [...state, action.response.result]
     }
-    d efault:
+    default:
       return state;
   }
 };
