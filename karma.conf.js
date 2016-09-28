@@ -22,6 +22,11 @@ module.exports = function(config) {
     webpackServer: {
       noInfo: true
     },
+    
+     plugins: [
+      "karma-phantomjs-launcher"
+    ],
+    
     coverageReporter: {
       dir: 'coverage/',
       reporters: [
