@@ -17,6 +17,7 @@
     "serve:dist": "node server.js --env=dist",
     "start": "node server.js --env=dev",
     "test": "karma start",
+    "test-single-run": "karma start karma.conf.js --single-run",
     "test:watch": "karma start --autoWatch=true --singleRun=false"
   },
   "repository": "",
