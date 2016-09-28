@@ -1,0 +1,39 @@
+stage 'Getting Source Files and Dependencies' 
+
+node{
+    git 'https://github.com/renelopez/ReduxPlayGround.git'
+    
+    bat 'npm install'
+    
+    stash name:'everything',
+          excludes: 'test-results/**', 
+          includes: '**'
+    bat 'npm run test-single-run -- --browsers PhantomJS'      
+}
+
+stage 'Running on Windows Node' 
+node('windows'){
+    bat 'dir'
+    
+    bat 'del /S /Q *'
+    
+    unstash 'everything'
+    
+    bat 'dir'
+}
+
+stage 'Notification and Manual Verification'
+node{
+    notify("Deploy to QA?")    
+}
+
+input "Deploy to QA?"
+
+def notify(status){
+    emailext (
+      to: "rene.lopez@unosquare.com",
+      subject: "${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+      body: """<p>${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+        <p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>""",
+    )
+}
