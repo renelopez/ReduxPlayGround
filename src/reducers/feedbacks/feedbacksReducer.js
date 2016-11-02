@@ -8,6 +8,20 @@ import {CREATE_FEEDBACK_SUCCESS,EDIT_FEEDBACK_SUCCESS,LOAD_FEEDBACKS_SUCCESS} fr
 import initialState from '../initialState.js'
 import _ from 'lodash';
 
+const byId=(state={},action)=>{
+
+  switch (action.type){
+    case CREATE_FEEDBACK_SUCCESS:
+      return {
+          ...state,
+          ...action.response.entities.feedbacks
+      }
+  }
+};
+
+
+
+
 export default function(state = initialState.feedbacks, action) {
   /* Keep the reducer clean - do not mutate the original state. */
 
