@@ -19,6 +19,6 @@ BookDetailContainer.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return {selectedBook: state.books.selectedBook}
+  return {selectedBook: state.bookModule.selectedBook}
 }
 export default connect(mapStateToProps)(BookDetailContainer);

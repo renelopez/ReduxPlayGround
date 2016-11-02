@@ -30,7 +30,7 @@ const selectedBook = (state = {}, action) => {
   return state;
 };
 
-const bookIds = (state = [], action)=> {
+const allIds = (state = [], action)=> {
   switch (action.type) {
     case LOAD_BOOKS_SUCCESS: {
       return action.response.result;
@@ -40,12 +40,12 @@ const bookIds = (state = [], action)=> {
 };
 
 
-const booksModule = combineReducers({
+const bookModule = combineReducers({
     selectedBook: selectedBook,
     byId: byId,
-    bookIds: bookIds
+    allIds: allIds
   }
 );
 
 
-export default booksModule;
+export default bookModule;

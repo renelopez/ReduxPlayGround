@@ -13,7 +13,7 @@ import candidatesReducer,* as fromCandidates from '../reducers/candidates/candid
 
 const reducers = {
                    ajaxCallsInProgress:ajaxReducer,
-                   books: booksReducer,
+                   bookModule: booksReducer,
                    candidates:candidatesReducer,
                    feedbacks: feedbacks,
                    positions: positionReducer,
