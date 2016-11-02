@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89f4a1b6-216e-448c-a1a9-e48092453980" name="Default" comment="Added tests">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/book/BookDetailComponent-compiled.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/book/BookDetailComponent-compiled.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/book/BookDetailContainer-compiled.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/book/BookDetailContainer-compiled.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/index-compiled.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/index-compiled.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/index-compiled.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/index-compiled.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/selectors/bookSelectors-compiled.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/selectors/bookSelectors-compiled.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/selectors/bookSelectors.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/selectors/candidateSelectors-compiled.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/selectors/candidateSelectors-compiled.js.map" afterPath="" />
+    <list default="true" id="89f4a1b6-216e-448c-a1a9-e48092453980" name="Default" comment="Adding missing files&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/assets/448c34a56d699c29117adc64c43affeb.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/assets/e18bbf611f2a2e43afc071aa2f4e1512.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/assets/f4769f9bdb7466be65088239c12046d1.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/assets/fa2772327f55d8198301fdb8bcfc8158.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/assets/89889688147bd7575d6327160d64e760.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/assets/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/assets/app.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/RootComponent.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/selectors/commonSelectors.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/book/BookDetailContainer.js" afterPath="$PROJECT_DIR$/src/components/book/BookDetailContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/book/BooksContainer.js" afterPath="$PROJECT_DIR$/src/components/book/BooksContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/books/booksReducer.js" afterPath="$PROJECT_DIR$/src/reducers/books/booksReducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/index.js" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
     </list>
     <list id="8f0d5f06-c81e-489c-83a2-6f7a869a5bf6" name="New changelist" comment="" />
     <ignored path="ReduxPlayGround.iws" />
@@ -41,7 +34,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RootComponent.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RootComponent.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/RootComponent.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -99,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookDetailContainer.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BookDetailContainer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/book/BookDetailContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+            <state relative-caret-position="210">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding>
                 <element signature="e#14#65#0" expanded="true" />
               </folding>
@@ -714,7 +707,7 @@
       <workItem from="1475074937485" duration="2604000" />
       <workItem from="1475092252852" duration="219000" />
       <workItem from="1476392453610" duration="3000" />
-      <workItem from="1478035176997" duration="8498000" />
+      <workItem from="1478035176997" duration="8567000" />
     </task>
     <task id="LOCAL-00001" summary="Added Monaco and Route Handling">
       <created>1460348205260</created>
@@ -786,18 +779,26 @@
       <option name="project" value="LOCAL" />
       <updated>1475092420420</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added Small Refactors To Project">
+      <created>1478050947424</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1478050947424</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140687000" />
+    <option name="totallyTimeSpent" value="140756000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-1" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19599578" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19599578" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32552955" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -838,7 +839,9 @@
     <MESSAGE value="Added refactors" />
     <MESSAGE value="Added refactors for redux normalizr" />
     <MESSAGE value="Added tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tests" />
+    <MESSAGE value="Added Small Refactors To Project" />
+    <MESSAGE value="Adding missing files&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding missing files&#10;" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -1094,16 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RootComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="66" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1160,10 +1153,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/book/BookDetailContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+        <state relative-caret-position="210">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding>
             <element signature="e#14#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RootComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="66" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
